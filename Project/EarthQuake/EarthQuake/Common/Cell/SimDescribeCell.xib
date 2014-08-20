@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="OcM-4z-iyw" customClass="SimDescribeCell">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OcM-4z-iyw" id="xXm-DI-6gi">
+                <rect key="frame" x="0.0" y="0.0" width="257" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-Jl-ch3">
+                        <rect key="frame" x="5" y="5" width="247" height="55"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无人员伤亡,无建筑物损坏，未出现重伤人员和死亡人员" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="237" translatesAutoresizingMaskIntoConstraints="NO" id="bR2-kB-IUK">
+                                <rect key="frame" x="5" y="5" width="237" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bR2-kB-IUK" secondAttribute="trailing" constant="5" id="RMD-Jw-7WB"/>
+                            <constraint firstItem="bR2-kB-IUK" firstAttribute="top" secondItem="NYM-Jl-ch3" secondAttribute="top" constant="5" id="U8Y-zm-nrK"/>
+                            <constraint firstItem="bR2-kB-IUK" firstAttribute="leading" secondItem="NYM-Jl-ch3" secondAttribute="leading" constant="5" id="YTG-WJ-DoZ"/>
+                            <constraint firstAttribute="bottom" secondItem="bR2-kB-IUK" secondAttribute="bottom" constant="5" id="nZr-Kr-xhF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NYM-Jl-ch3" secondAttribute="bottom" constant="5" id="404-os-Haj"/>
+                    <constraint firstItem="NYM-Jl-ch3" firstAttribute="leading" secondItem="xXm-DI-6gi" secondAttribute="leading" constant="5" id="S8g-Sg-wmW"/>
+                    <constraint firstItem="NYM-Jl-ch3" firstAttribute="top" secondItem="xXm-DI-6gi" secondAttribute="top" constant="5" id="jgD-I4-WIx"/>
+                    <constraint firstAttribute="trailing" secondItem="NYM-Jl-ch3" secondAttribute="trailing" constant="5" id="yWM-4C-vaS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="conLabel" destination="bR2-kB-IUK" id="UKE-p4-dZi"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>GetQzRunningResult</string>
+	<string>GetQzRunningCriResult</string>
+	<string>GetCzRunningResult</string>
+	<string>GetCzStationResult</string>
+	<string>GetQzStationResult</string>
+	<string>SetUserResult</string>
+	<string>AlertUserResult</string>
+	<string>GetLoginResult</string>
+	<string>GetCataLogCusExResult</string>
+	<string>DelInfoCusByIdResult</string>
+	<string>GetInfoCusByUserIdResult</string>
+	<string>GetRecordCusResult</string>
+	<string>GetInfoCusResult</string>
+	<string>SetInfoCusResult</string>
+	<string>UploadDataMacResult</string>
+	<string>UploadDataProResult</string>
+	<string>UploadDataPubResult</string>
+	<string>UploadDataEqFeelResult</string>
+	<string>GetCzCatalogResult</string>
+	<string>UploadImageResult</string>
+	<string>VideoImageResult</string>
+</array>
+</plist>
