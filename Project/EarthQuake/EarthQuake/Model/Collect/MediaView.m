@@ -7,6 +7,7 @@
 //
 
 #import "MediaView.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation MediaView
 

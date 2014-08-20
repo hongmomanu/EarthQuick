@@ -20,7 +20,7 @@
     // Set the client ID
     NSError *error;
     NSString* clientID = @"lsTnqx6kfd0c5Nml";
-    [AGSRuntimeEnvironment setClientID:clientID error:&error];
+//   [AGSRuntimeEnvironment setClientID:clientID error:&error];
     if(error){
         // We had a problem using our client ID
         NSLog(@"Error using client ID : %@",[error localizedDescription]);
