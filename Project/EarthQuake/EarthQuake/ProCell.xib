@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="53" id="sbs-ZK-bvJ" customClass="ProCell">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="53"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbs-ZK-bvJ" id="PXc-vy-XgA">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="52"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="浙江省杭州市西湖区塘苗路16号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUf-e9-vLs">
+                        <rect key="frame" x="10" y="5" width="279" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2014-05-14 15:13:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-Fb-rZE">
+                        <rect key="frame" x="10" y="28" width="146" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="上传成功" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5U6-ac-RuP">
+                        <rect key="frame" x="219" y="28" width="70" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="ZDK-I7-2Rg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TUf-e9-vLs" firstAttribute="leading" secondItem="PXc-vy-XgA" secondAttribute="leading" constant="10" id="8xh-je-JRz"/>
+                    <constraint firstAttribute="trailing" secondItem="5U6-ac-RuP" secondAttribute="trailing" constant="10" id="Hzn-1t-aVG"/>
+                    <constraint firstAttribute="trailing" secondItem="TUf-e9-vLs" secondAttribute="trailing" constant="10" id="KgR-2U-AJE"/>
+                    <constraint firstAttribute="bottom" secondItem="4fS-Fb-rZE" secondAttribute="bottom" constant="10" id="OtJ-cN-nwx"/>
+                    <constraint firstItem="4fS-Fb-rZE" firstAttribute="leading" secondItem="PXc-vy-XgA" secondAttribute="leading" constant="10" id="Wcg-93-75Q"/>
+                    <constraint firstAttribute="bottom" secondItem="5U6-ac-RuP" secondAttribute="bottom" constant="10" id="ZpK-AK-r9V"/>
+                    <constraint firstItem="TUf-e9-vLs" firstAttribute="top" secondItem="PXc-vy-XgA" secondAttribute="top" constant="5" id="nTd-g8-Q9Z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="TUf-e9-vLs" id="CBw-Ay-qmi"/>
+                <outlet property="stateLabel" destination="5U6-ac-RuP" id="fUe-Vy-3Uv"/>
+                <outlet property="timeLabel" destination="4fS-Fb-rZE" id="WWq-h7-Y2A"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

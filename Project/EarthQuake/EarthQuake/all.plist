@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MapLayerUrl</key>
+	<string>http://61.164.34.9:8001/ArcGIS/rest/services/Earthquake2/PdaLayer/MapServer</string>
+	<key>WebServicesUrl</key>
+	<string>http://61.164.34.9:8002/EarthquakeIINet/EarthquakeII/pda/SPda.asmx</string>
+</dict>
+</plist>
