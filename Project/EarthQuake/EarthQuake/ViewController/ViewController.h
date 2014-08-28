@@ -28,5 +28,7 @@
 - (IBAction)rapidReportAct:(id)sender;
 - (IBAction)collectAct:(id)sender;
 - (IBAction)feelAct:(id)sender;
+- (IBAction)sentimentAct:(id)sender;
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
 @end

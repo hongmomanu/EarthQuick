@@ -14,6 +14,10 @@
 
 @implementation ViewController
 
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue
+{
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -76,6 +80,11 @@
     [self performSegueWithIdentifier:@"homeTofeel" sender:nil];
 }
 
+- (IBAction)sentimentAct:(id)sender {
+    [self performSegueWithIdentifier:@"homeTofeel" sender:nil];
+}
+
+
 -(void)feelViewControllerReturn:(FeelViewController *)controller{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -85,6 +94,7 @@
 }
 
 -(void)eqimViewControllerReturn:(EqimViewController *)controller {
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

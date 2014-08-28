@@ -48,6 +48,7 @@
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:result
                                                             options:kNilOptions
                                                               error:&error];
+    //NSLog(@"测试 %@",jsonDic);
     if ([[jsonDic objectForKey:@"success"] boolValue]) {
         [self.delegate eqimSoapDidReturn:self eqimData:[jsonDic objectForKey:@"data"]];
     }else{

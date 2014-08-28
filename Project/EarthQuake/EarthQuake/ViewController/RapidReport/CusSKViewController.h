@@ -17,6 +17,7 @@
 @class CusSKViewController;
 @protocol CusSKViewControllerDelegate <NSObject>
 -(void)CusSKViewControllerReturn:(CusSKViewController *)controller ;
+-(void)eqimViewReloadList:(CustomRecordSoap *) p_soap;
 
 @end
 @interface CusSKViewController : UIViewController<UITextFieldDelegate>

@@ -31,26 +31,34 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.configData = [[NSConfigData alloc]init];
-
-    self.esriView = [[esriView alloc] initWithFrame:self.conView.frame];
-    self.esriView.delegate = self;
-    [self.conView addSubview:self.esriView];
+    @autoreleasepool {
+        self.configData = [[NSConfigData alloc]init];
+        NSLog(@"1111 %@",self.esriView);
+        self.esriView = [[esriView alloc] initWithFrame:self.conView.frame];
+        self.esriView.delegate = self;
+        [self.conView addSubview:self.esriView];
+        
+        self.tabBar.selectedItem = self.eqimBarItem;
+        self.tabBar.delegate = self;
+        
+        self.type = @"Auto";
+        self.days = @"30";
+        
+        self.eqimSoap = [[EqimSoap alloc]init];
+        self.eqimSoap.delegate = self;
+        [self.eqimSoap getCataLogEx:self.type Day:self.days];
+    }
     
-    self.tabBar.selectedItem = self.eqimBarItem;
-    self.tabBar.delegate = self;
-    
-    self.type = @"Auto";
-    self.days = @"30";
-    
-    self.eqimSoap = [[EqimSoap alloc]init];
-    self.eqimSoap.delegate = self; 
-    [self.eqimSoap getCataLogEx:self.type Day:self.days];
  
 }
 
+
 -(void)eqimSoapDidReturn:(EqimSoap *) p_soap eqimData:(NSDictionary *) p_eqimData{
+    
     [self.esriView addEqimLayer:p_eqimData select:nil];
+    //NSLog(@"测试1 %@",p_soap);
+    //NSLog(@"测试2 %@",p_eqimData);
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -127,6 +135,7 @@
 -(void)esriViewDetails:(esriView *)controller details:(AGSGraphic *)agsGraphic queryParams:(QueryParams *)queryParams{
     self.detailsAGS = agsGraphic;
     self.queryParams = queryParams;
+  
     if ([self.esriView.ghLayer.name isEqualToString:@"EqimLayer"]) {
             [self performSegueWithIdentifier:@"mapToeqimDetails" sender:nil];
     }else if([self.esriView.ghLayer.name isEqualToString:@"CustomLayer"]){
@@ -184,6 +193,7 @@
     
     self.type = type;
     self.days = days;
+    //NSLog(@"OK :%@", "222");
     [self.esriView addEqimLayer:eqimData select:nil];
     [self dismissViewControllerAnimated:YES completion:NULL];
 
@@ -191,6 +201,7 @@
 
 -(void)eqimListViewControllerSelect:(EqimListViewController *)controller eqimData:(NSDictionary *) eqimData eqimType:(NSString *)type eqimDays:(NSString *)days selectCell:(NSDictionary *)select{
     
+    //NSLog(@"OK :%@", "111");
     self.type = type;
     self.days = days;
     [self.esriView addEqimLayer:eqimData select:select];
@@ -204,7 +215,6 @@
 }
 
 - (IBAction)returnHome:(id)sender{
-    
     [self.delegate eqimViewControllerReturn:self];
 }
 

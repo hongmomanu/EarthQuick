@@ -26,42 +26,48 @@
         NSLog(@"Error using client ID : %@",[error localizedDescription]);
     }else if (self) {
         // Initialization code
-        
-        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"esriView" owner:self options: nil];
-        if(arrayOfViews.count < 1){
-            return nil;
-        }
-        self = [arrayOfViews objectAtIndex:0];
-        
-        CGRect r1 = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        
-        self.frame = r1;
-        
-        self.configData  = [[NSConfigData alloc]init];
-        
-        NSError* err;
-        /* sr:CGCS2000(4490)*/
-        
-        TianDiTuWMTSLayer* TianDiTuLyr = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_2000 LocalServiceURL:nil error:&err];
-        TianDiTuWMTSLayer* TianDiTuLyr_Anno = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_ANNOTATION_CHINESE_2000 LocalServiceURL:nil error:&err];
-        
-        if(TianDiTuLyr!=nil && TianDiTuLyr_Anno !=nil)
-        {
-            [self.mapView removeMapLayerWithName:@"TianDiTu Layer"];
-            [self.mapView removeMapLayerWithName:@"TianDiTu Annotation Layer"];
-            [self.mapView addMapLayer:TianDiTuLyr withName:@"TianDiTu Layer"];
-            [self.mapView addMapLayer:TianDiTuLyr_Anno withName:@"TianDiTu Annotation Layer"];
+        //NSLog(@"连续加载 : %@",@"测试333");
+        //NSLog(@"连续加载对象 : %@",self);
+        @autoreleasepool{
+            NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"esriView" owner:self options: nil];
+            if(arrayOfViews.count < 1){
+                return nil;
+            }
+            self = [arrayOfViews objectAtIndex:0];
             
-            self.mapView.layerDelegate = self;
-
-            AGSPoint *centPoint = [AGSPoint pointWithX:107.3425 y:33.3730 spatialReference:self.mapView.spatialReference];
-            [self.mapView zoomToScale:1.0952406432898982E8 withCenterPoint:centPoint animated:YES];
+            CGRect r1 = CGRectMake(0, 0, frame.size.width, frame.size.height);
             
-            [self locationListenner];
-        }else{
-            //layer encountered an error
-            NSLog(@"Error encountered: %@", err);
+            self.frame = r1;
+            
+            self.configData  = [[NSConfigData alloc]init];
+            //NSLog(@"连续加载对象 : %@",self.mapView);
+            
+            NSError* err;
+            /* sr:CGCS2000(4490)*/
+            
+            
+            TianDiTuWMTSLayer* TianDiTuLyr = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_2000 LocalServiceURL:nil error:&err];
+            TianDiTuWMTSLayer* TianDiTuLyr_Anno = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_ANNOTATION_CHINESE_2000 LocalServiceURL:nil error:&err];
+            
+            if(TianDiTuLyr!=nil && TianDiTuLyr_Anno !=nil)
+            {
+                [self.mapView removeMapLayerWithName:@"TianDiTu Layer"];
+                [self.mapView removeMapLayerWithName:@"TianDiTu Annotation Layer"];
+                [self.mapView addMapLayer:TianDiTuLyr withName:@"TianDiTu Layer"];
+                [self.mapView addMapLayer:TianDiTuLyr_Anno withName:@"TianDiTu Annotation Layer"];
+                
+                self.mapView.layerDelegate = self;
+                
+                AGSPoint *centPoint = [AGSPoint pointWithX:107.3425 y:33.3730 spatialReference:self.mapView.spatialReference];
+                [self.mapView zoomToScale:1.0952406432898982E8 withCenterPoint:centPoint animated:YES];
+                
+                [self locationListenner];
+            }else{
+                //layer encountered an error
+                NSLog(@"Error encountered: %@", err);
+            }
         }
+        
 
     }
     return self;
@@ -166,35 +172,40 @@
     [self topLocationLayer];
     
     for (int i=self.dataDic.count-1; i>=0; i--) {
-        NSArray *t_arr = (NSArray *)self.dataDic;
-        NSDictionary *t_att = [t_arr objectAtIndex:i];
-        NSString *t_imagePath;
-        t_imagePath = @"cus_cz.png";
+        @autoreleasepool{
+            NSArray *t_arr = (NSArray *)self.dataDic;
+            NSDictionary *t_att = [t_arr objectAtIndex:i];
+            NSString *t_imagePath;
+            t_imagePath = @"cus_cz.png";
+            
+            AGSPoint *t_point = [AGSPoint pointWithX:[[t_att objectForKey:@"Lon"] doubleValue]
+                                                   y:[[t_att objectForKey:@"Lat"] doubleValue]
+                                    spatialReference:self.mapView.spatialReference];
+            
+            UIImage *t_m;
+            t_m =  [self.configData addImageText:[UIImage imageNamed:t_imagePath] text:[[t_att objectForKey:@"M"] stringValue]];
+            
+            AGSPictureMarkerSymbol *picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:t_m ];
+            
+            AGSGraphic *t_gh = [AGSGraphic graphicWithGeometry:t_point symbol:picMarkerSymbol attributes:t_att infoTemplateDelegate:nil];
+            
+            [self.ghLayer addGraphic:t_gh];
+            
+            
+            if (self.selectCatalog==nil) {
+                [self.mapView.callout dismiss];
+            }else if(self.selectCatalog == t_att){
+                [self showCallOut:t_gh title:[self.configData  jsonDateToDate:[t_gh attributeAsStringForKey:@"Sendtime"] ] detail:nil];
+            }
         
-        AGSPoint *t_point = [AGSPoint pointWithX:[[t_att objectForKey:@"Lon"] doubleValue]
-                                               y:[[t_att objectForKey:@"Lat"] doubleValue]
-                                spatialReference:self.mapView.spatialReference];
-        
-        UIImage *t_m;
-        t_m =  [self.configData addImageText:[UIImage imageNamed:t_imagePath] text:[[t_att objectForKey:@"M"] stringValue]];
-        
-        AGSPictureMarkerSymbol *picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:t_m ];
-        
-        AGSGraphic *t_gh = [AGSGraphic graphicWithGeometry:t_point symbol:picMarkerSymbol attributes:t_att infoTemplateDelegate:nil];
-        
-        [self.ghLayer addGraphic:t_gh];
-        
-        
-        if (self.selectCatalog==nil) {
-            [self.mapView.callout dismiss];
-        }else if(self.selectCatalog == t_att){
-            [self showCallOut:t_gh title:[self.configData  jsonDateToDate:[t_gh attributeAsStringForKey:@"Sendtime"] ] detail:nil];
         }
+        
     }
 
 }
 //最新地震
 -(void)addEqimLayer:(NSDictionary *)p_data select:(NSDictionary *)selectDic{
+    @autoreleasepool{
     self.mapView.touchDelegate = self;
     self.mapView.callout.delegate = self;
     
@@ -202,44 +213,67 @@
     
     self.dataDic = p_data;
     self.dataType = @"EqimData";
-
+    NSLog(@"IS NIL TEST %@" ,self.ghLayer);
     [self removeAllLayer];
 
     
+    NSLog(@"IS NIL TEST %@" ,@"1");
     self.ghLayer = [[AGSGraphicsLayer alloc]init];
     self.ghLayer.selectionColor = [UIColor redColor];
-    [self.mapView addMapLayer:self.ghLayer withName:@"EqimLayer"];
+        
+    NSLog(@"IS NIL TEST %@" ,@"2");
     [self topLocationLayer];
+    [self.mapView addMapLayer:self.ghLayer withName:@"EqimLayer"];
+        
+    NSLog(@"IS NIL TEST %@" ,@"3");
     
-    for (int i=self.dataDic.count-1; i>=0; i--) {
-        NSArray *t_arr = (NSArray *)self.dataDic;
-        NSDictionary *t_att = [t_arr objectAtIndex:i];
-        NSString *t_imagePath;
-        if (i==0) {
-            t_imagePath = @"new_cz.png";
-        }else{
-            t_imagePath = @"last_cz.png";
+    NSLog(@"IS NIL TEST %@" ,@"3.1");
+    NSDictionary *t_att;
+    NSString *t_imagePath;
+    AGSPoint *t_point;
+    UIImage *t_m;
+    NSLog(@"IS NIL TEST %@" ,@"3.2");
+    AGSPictureMarkerSymbol *picMarkerSymbol;
+    AGSGraphic *t_gh;
+    NSLog(@"IS NIL TEST %@" ,@"3.3");
+    
+    NSArray *t_arr = (NSArray *)self.dataDic;
+    NSLog(@"IS NIL TEST %@" ,@"4");
+
+    for (int i=t_arr.count-1; i>=0; i--) {
+        @autoreleasepool{
+            t_att = [t_arr objectAtIndex:i];
+            
+            if (i==0) {
+                t_imagePath = @"new_cz.png";
+            }else{
+                t_imagePath = @"last_cz.png";
+            }
+            
+            t_point = [AGSPoint pointWithX:[[t_att objectForKey:@"Lon"] doubleValue]
+                                         y:[[t_att objectForKey:@"Lat"] doubleValue]
+                          spatialReference:self.mapView.spatialReference];
+            
+            
+            t_m =  [self.configData addImageText:[UIImage imageNamed:t_imagePath] text:[[t_att objectForKey:@"M"] stringValue]];
+            
+            picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:t_m ];
+            
+            t_gh = [AGSGraphic graphicWithGeometry:t_point symbol:picMarkerSymbol attributes:t_att infoTemplateDelegate:nil];
+            
+            [self.ghLayer addGraphic:t_gh];
+            
+            
+            if (i==0&&!self.selectCatalog) {
+                [self showCallOut:t_gh title:[t_gh attributeAsStringForKey:@"LocationCname"] detail:[t_gh attributeAsStringForKey:@"OTime"]];
+            }else if(self.selectCatalog == t_att){
+                [self showCallOut:t_gh title:[t_gh attributeAsStringForKey:@"LocationCname"] detail:[t_gh attributeAsStringForKey:@"OTime"]];
+            }
         }
         
-        AGSPoint *t_point = [AGSPoint pointWithX:[[t_att objectForKey:@"Lon"] doubleValue]
-                                               y:[[t_att objectForKey:@"Lat"] doubleValue]
-                                spatialReference:self.mapView.spatialReference];
-        
-        UIImage *t_m;
-        t_m =  [self.configData addImageText:[UIImage imageNamed:t_imagePath] text:[[t_att objectForKey:@"M"] stringValue]];
-        
-        AGSPictureMarkerSymbol *picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:t_m ];
-        
-        AGSGraphic *t_gh = [AGSGraphic graphicWithGeometry:t_point symbol:picMarkerSymbol attributes:t_att infoTemplateDelegate:nil];
-        
-        [self.ghLayer addGraphic:t_gh];
-        
-        
-        if (i==0&&!self.selectCatalog) {
-            [self showCallOut:t_gh title:[t_gh attributeAsStringForKey:@"LocationCname"] detail:[t_gh attributeAsStringForKey:@"OTime"]];
-        }else if(self.selectCatalog == t_att){
-            [self showCallOut:t_gh title:[t_gh attributeAsStringForKey:@"LocationCname"] detail:[t_gh attributeAsStringForKey:@"OTime"]];
-            }
+    }
+        NSLog(@"IS NIL TEST %@" ,@"5");
+
     }
 }
 
@@ -424,6 +458,10 @@
     //结构体，存储位置坐标
     CLLocationCoordinate2D loc = [newLocation coordinate];
 
+    //NSLog(@"IS NIL TEST %@" ,@"位置发生变化");
+    NSLog(@"x位置 %f",loc.longitude);
+    NSLog(@"x位置 %f",loc.latitude);
+    
     
     self.locationLayer = [self getLocationLayer:self.mapView x:loc.longitude y:loc.latitude];
     [self.mapView removeMapLayerWithName:@"GPS Location Layer"];
@@ -436,8 +474,12 @@
 }
 -(void)topLocationLayer{
     if (self.locationLayer !=nil) {
-        [self.mapView removeMapLayerWithName:@"GPS Location Layer"];
-        [self.mapView addMapLayer:self.locationLayer withName:@"GPS Location Layer"];
+        //NSLog(@"IS NIL TEST %@" ,@"3.0");
+        //NSLog(@"IS NIL TEST %@" ,self.locationLayer);
+        //[self.mapView removeMapLayerWithName:@"GPS Location Layer"];
+        
+        //[self.mapView addMapLayer:self.locationLayer withName:@"GPS Location Layer"];
+        
     }
 }
 
@@ -457,28 +499,31 @@
 //活的定位图层
 -(AGSGraphicsLayer*)getLocationLayer:(AGSMapView *)p_mapView x:(double)p_x y:(double)p_y{
     
-    AGSGraphicsLayer *locationLayer = [[AGSGraphicsLayer alloc]init];
-    AGSPoint *locationPoint = [AGSPoint pointWithX:p_x y:p_y spatialReference:p_mapView.spatialReference];
-    AGSPictureMarkerSymbol *picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locMark.png"];
+    @autoreleasepool {
+        AGSGraphicsLayer *locationLayer = [[AGSGraphicsLayer alloc]init];
+        AGSPoint *locationPoint = [AGSPoint pointWithX:p_x y:p_y spatialReference:p_mapView.spatialReference];
+        AGSPictureMarkerSymbol *picMarkerSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locMark.png"];
+        
+        
+        // A symbol for the buffer
+        AGSSimpleFillSymbol *innerSymbol = [AGSSimpleFillSymbol simpleFillSymbol];
+        innerSymbol.color = [[UIColor blueColor] colorWithAlphaComponent:0.20];
+        innerSymbol.outline.color = [UIColor darkGrayColor];
+        
+        // Create the buffer graphics using the geometry engine
+        AGSGeometryEngine *geometryEngine = [AGSGeometryEngine defaultGeometryEngine];
+        AGSGeometry *newGeometry = [geometryEngine bufferGeometry:locationPoint byDistance:0.0005];
+        AGSGraphic *newGraphic = [AGSGraphic graphicWithGeometry:newGeometry symbol:innerSymbol attributes:nil infoTemplateDelegate:nil];
+        
+        self.locationGrp = [AGSGraphic graphicWithGeometry:locationPoint symbol:picMarkerSymbol attributes:nil infoTemplateDelegate:nil];
+        [locationLayer removeAllGraphics];
+        
+        [locationLayer addGraphic:newGraphic];
+        [locationLayer addGraphic:self.locationGrp];
+        
+        return locationLayer;
+    }
     
-    
-    // A symbol for the buffer
-    AGSSimpleFillSymbol *innerSymbol = [AGSSimpleFillSymbol simpleFillSymbol];
-	innerSymbol.color = [[UIColor blueColor] colorWithAlphaComponent:0.20];
-	innerSymbol.outline.color = [UIColor darkGrayColor];
-    
-    // Create the buffer graphics using the geometry engine
-    AGSGeometryEngine *geometryEngine = [AGSGeometryEngine defaultGeometryEngine];
-    AGSGeometry *newGeometry = [geometryEngine bufferGeometry:locationPoint byDistance:0.0005];
-    AGSGraphic *newGraphic = [AGSGraphic graphicWithGeometry:newGeometry symbol:innerSymbol attributes:nil infoTemplateDelegate:nil];
-    
-     self.locationGrp = [AGSGraphic graphicWithGeometry:locationPoint symbol:picMarkerSymbol attributes:nil infoTemplateDelegate:nil];
-    [locationLayer removeAllGraphics];
-    
-    [locationLayer addGraphic:newGraphic];
-    [locationLayer addGraphic:self.locationGrp];
-    
-    return locationLayer;
 }
 
 -(double)degressTodouble:(double *)degress{

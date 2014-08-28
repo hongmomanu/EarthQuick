@@ -12,21 +12,25 @@
 #import "CusInfoSetSoap.h"
 #import "ProViewController.h"
 #import "CutViewController.h"
+#import "CustomIOS7AlertView.h"
 
 
 @class CusEqimViewController;
 @protocol CusEqimViewControllerDelegate <NSObject>
 -(void)CusEqimViewControllerReturn:(CusEqimViewController *)controller ;
+-(void)eqimViewReloadList:(CustomRecordSoap *) p_soap;
 
 @end
 
 @interface CusEqimViewController : UIViewController<UITextFieldDelegate,ProViewControllerDelegate,CutViewControllerDelegate>
 @property (weak,nonatomic) id <CusEqimViewControllerDelegate> delegate;
 @property (strong,nonatomic) MRProgressOverlayView *progressView;
+@property (strong,nonatomic) CustomIOS7AlertView *progressViewnew;
+@property (strong,nonatomic) NSConfigData *configData;
 @property (strong,nonatomic)ProViewController *proView;
 @property (strong,nonatomic)CutViewController *cutView;
 @property (strong,nonatomic) CusInfoSetSoap *cusInfoSetSoap;
-@property (strong,nonatomic) NSConfigData *configData;
+
 @property (strong,nonatomic) NSDictionary *userDic;
 @property (strong,nonatomic) NSString *infoId;
 @property (strong,nonatomic) NSDictionary *selDic;

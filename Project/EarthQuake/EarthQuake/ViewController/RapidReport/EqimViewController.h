@@ -23,6 +23,7 @@
 @protocol EqimViewControllerDelegate <NSObject>
 -(void)eqimViewControllerReturn:(EqimViewController *)controller ;
 
+
 @end
 
 @interface EqimViewController : UIViewController<esriViewDelegate,UITabBarDelegate,EqimSoapDelegate,EqimListViewControllerDelegate,EqimDetailsViewControllerDelegate,CustomViewControllerDelegate,CustDetailsViewControllerDelegate,SubjectViewControllerDelegate,SubDetailsViewControllerDelegate>

@@ -148,6 +148,7 @@
         [_progressView close];
         [_configData performBlock:^{
             [_configData showAlert:p_soap.msg];
+            [self.delegate eqimViewReloadList :p_soap];
             [self returnToCustom:self];
         } afterDelay:1.0];
     } afterDelay:1.0];

@@ -104,6 +104,7 @@
             }else{
                 
             }
+            NSLog(@"test log %@",@"sucesss");
             [self.cusTabView reloadData];
             [_configData showAlert:p_soap.msg];
         } afterDelay:1.0];
@@ -238,6 +239,19 @@
 
 -(void)CusEqimViewControllerReturn:(CusEqimViewController *)controller{
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+-(void)eqimViewReloadList:(CustomRecordSoap *) p_soap{
+ 
+    
+            if(p_soap.success){
+                [self.cusData replaceObjectAtIndex: self.cusTabView.indexPathForSelectedRow.row withObject:[p_soap.returnDic mutableCopy] ];
+                [self.cusTabView reloadData];
+            }
+    
+    
+    
+    
+    
 }
 
 -(void)CusSKViewControllerReturn:(CusSKViewController *)controller {

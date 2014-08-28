@@ -193,6 +193,7 @@
 }
 -(void)cusInfoSetSoapDidReturn:(CusInfoSetSoap *) p_soap {
     //友好界面隐藏
+    /**
     [_configData performBlock:^{
         if (p_soap.success) {
             _progressView.mode = MRProgressOverlayViewModeCheckmark;
@@ -205,11 +206,22 @@
                 _progressView.titleLabelText = p_soap.msg;
             }
         }
+        [self.delegate eqimViewReloadList :p_soap];
         [_configData performBlock:^{
             [_progressView dismiss:YES];
             [self returnToCustom:nil];
         } afterDelay:1.0];
+    } afterDelay:1.0];**/
+    
+    [_configData performBlock:^{
+        [_progressViewnew close];
+        [_configData performBlock:^{
+            [_configData showAlert:p_soap.msg];
+            [self.delegate eqimViewReloadList :p_soap];
+            [self returnToCustom:self];
+        } afterDelay:1.0];
     } afterDelay:1.0];
+
 }
 
 
@@ -222,9 +234,15 @@
 }
 
 - (IBAction)saveButAct:(id)sender {
+    self.progressViewnew = [self.configData getAlert:@"加载中..."];
+   [self.progressViewnew show ];
+
+    
     self.cusInfoSetSoap = [[CusInfoSetSoap alloc]init];
     
     self.cusInfoSetSoap.delegate = self;
+    
+    
     
     NSString *smsState;
     NSString *emailState;

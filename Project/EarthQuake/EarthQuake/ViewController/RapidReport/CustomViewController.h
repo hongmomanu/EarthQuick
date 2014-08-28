@@ -45,6 +45,7 @@
 @property (strong,nonatomic) CusSKViewController *cusSKViewController;
 @property (strong,nonatomic) CusInfoCusByUserIdSoap *cusInfoCusByUserIdSoap;
 @property (strong,nonatomic) CustomIOS7AlertView *progressView;
+@property (strong,nonatomic) CustomIOS7AlertView *progressViewnew;
 @property (strong,nonatomic) CusInfoDelByIdSoap *cusInfoDelByIdSoap;
 @property (strong,nonatomic) CusoceanViewController *oceanController;
 @property (strong,nonatomic) NSDictionary *selDic;

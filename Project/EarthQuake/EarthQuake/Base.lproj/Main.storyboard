@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
@@ -35,17 +35,6 @@
                                     <action selector="rapidReportAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bck-Qq-2nc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="LpC-dD-57g">
-                                <rect key="frame" x="136" y="64" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="55" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="现场信息" backgroundImage="homeBtnCol.png"/>
-                                <state key="highlighted" backgroundImage="homeBtnColSel.png"/>
-                                <connections>
-                                    <action selector="collectAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jum-JL-rck"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="z12-gb-Rn7">
                                 <rect key="frame" x="136" y="174" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,6 +66,17 @@
                                     <action selector="userBtnAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="k8u-9B-od5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="LpC-dD-57g">
+                                <rect key="frame" x="136" y="64" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="55" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="信息采集" backgroundImage="homeBtnCol.png"/>
+                                <state key="highlighted" backgroundImage="homeBtnColSel.png"/>
+                                <connections>
+                                    <action selector="collectAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jum-JL-rck"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="huE-lt-1iM" customClass="UIScrollView">
-                                <rect key="frame" x="8" y="85.5" width="305" height="474.5"/>
+                                <rect key="frame" x="8" y="84.999999676467866" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo.png" id="yHv-bn-uzH">
@@ -252,7 +252,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rcz-WF-NoG">
-                                <rect key="frame" x="7" y="85.5" width="305" height="474.5"/>
+                                <rect key="frame" x="7" y="84.999999173630158" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" id="0jV-ee-IjF">
@@ -438,7 +438,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView contentMode="scaleToFill" id="93K-9c-z9O">
-                                <rect key="frame" x="8" y="85.5" width="304" height="474.5"/>
+                                <rect key="frame" x="8" y="84.999999676467866" width="304" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSf-zU-oLS">
@@ -588,7 +588,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="现场采集" id="zdb-KK-t4I">
+                                    <navigationItem title="信息采集" id="zdb-KK-t4I">
                                         <barButtonItem key="leftBarButtonItem" image="toolBack.png" id="OBk-bR-iXl">
                                             <connections>
                                                 <action selector="returnToHome:" destination="YA0-KI-yhq" id="T9M-QI-na5"/>
@@ -662,7 +662,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NvN-1f-yC7">
-                                <rect key="frame" x="8" y="72" width="305" height="486.5"/>
+                                <rect key="frame" x="8" y="72" width="305" height="487"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
@@ -724,7 +724,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Kw-u9-tSt">
-                                <rect key="frame" x="8" y="72" width="305" height="486.5"/>
+                                <rect key="frame" x="8" y="72" width="305" height="487"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
@@ -784,7 +784,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kFm-d8-L1b">
-                                <rect key="frame" x="8" y="72" width="305" height="486.5"/>
+                                <rect key="frame" x="8" y="72" width="305" height="487"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上报人员:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iyG-lh-YAh">
@@ -1337,6 +1337,16 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                             </view>
+                            <tabBar contentMode="scaleToFill" id="jOJ-ye-ThP">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem title="最新地震" image="RapEqim.png" id="q0n-gP-OHW"/>
+                                    <tabBarItem tag="1" title="速报定制" image="RapSet.png" id="ecq-Of-LOD"/>
+                                    <tabBarItem tag="2" title="专题图" image="RapLayer.png" id="dfF-Fq-jLS"/>
+                                </items>
+                                <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </tabBar>
                             <navigationBar contentMode="scaleToFill" id="zQ1-fz-2et">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1349,22 +1359,12 @@
                                     <navigationItem title="地震速报" id="QUU-Qj-3Ys">
                                         <barButtonItem key="leftBarButtonItem" image="toolBack.png" id="m1Y-L9-JDg">
                                             <connections>
-                                                <action selector="returnHome:" destination="CXX-8w-fnP" id="yUv-iR-xXS"/>
+                                                <segue destination="Ndv-Y3-eS3" kind="unwind" unwindAction="unwindToList:" id="5bt-wg-oBd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tabBar contentMode="scaleToFill" id="jOJ-ye-ThP">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                <items>
-                                    <tabBarItem title="最新地震" image="RapEqim.png" id="q0n-gP-OHW"/>
-                                    <tabBarItem tag="1" title="速报定制" image="RapSet.png" id="ecq-Of-LOD"/>
-                                    <tabBarItem tag="2" title="专题图" image="RapLayer.png" id="dfF-Fq-jLS"/>
-                                </items>
-                                <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1382,6 +1382,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5F-qc-Rnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ndv-Y3-eS3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="926" y="1368"/>
         </scene>
@@ -1663,7 +1664,7 @@
                                 <color key="barTintColor" red="0.13333334029999999" green="0.7607843876" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="NSV-I5-DbP">
-                                <rect key="frame" x="8" y="72" width="305" height="488.5"/>
+                                <rect key="frame" x="8" y="72" width="305" height="489"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上报号码:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MH6-np-hRI">
@@ -2071,21 +2072,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.82" borderStyle="roundedRect" minimumFontSize="17" id="RSM-gz-CBu">
-                                        <rect key="frame" x="200" y="109" width="95" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" id="NVf-bC-TA8">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" id="NVf-bC-TA8">
                                         <rect key="frame" x="85" y="185" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8.0" borderStyle="roundedRect" minimumFontSize="17" id="bGo-UN-0Te">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8.0" borderStyle="roundedRect" minimumFontSize="17" id="bGo-UN-0Te">
                                         <rect key="frame" x="200" y="186" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2150,6 +2144,13 @@
                                             <action selector="onRadioBtn:" destination="wMz-YK-CZc" eventType="touchUpInside" id="mv3-kC-xJn"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.82" borderStyle="roundedRect" minimumFontSize="17" id="RSM-gz-CBu">
+                                        <rect key="frame" x="200" y="109" width="95" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
@@ -2258,7 +2259,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="KgG-DA-Flq">
-                                <rect key="frame" x="7" y="72" width="305" height="486.5"/>
+                                <rect key="frame" x="7" y="72" width="305" height="487"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上报人员:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C8b-ir-Reg">
@@ -2491,13 +2492,13 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" id="2ch-Mg-LZH">
-                                <rect key="frame" x="8" y="73" width="305" height="487.5"/>
+                                <rect key="frame" x="8" y="73" width="305" height="487"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j0I-Bj-Cpl">
-                                <rect key="frame" x="20" y="84" width="280" height="14.5"/>
+                                <rect key="frame" x="20" y="84" width="280" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3138,42 +3139,42 @@
                                             <action selector="saveButAct:" destination="jR5-61-jhf" eventType="touchUpInside" id="OFM-Es-CZ5"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="119.67" borderStyle="roundedRect" minimumFontSize="17" id="XNB-F5-XTs">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="119.67" borderStyle="roundedRect" minimumFontSize="17" id="XNB-F5-XTs">
                                         <rect key="frame" x="85" y="72" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.55" borderStyle="roundedRect" minimumFontSize="17" id="SaJ-qs-fZR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.55" borderStyle="roundedRect" minimumFontSize="17" id="SaJ-qs-fZR">
                                         <rect key="frame" x="200" y="72" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120.25" borderStyle="roundedRect" minimumFontSize="17" id="N4e-qP-EN9">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120.25" borderStyle="roundedRect" minimumFontSize="17" id="N4e-qP-EN9">
                                         <rect key="frame" x="85" y="109" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.82" borderStyle="roundedRect" minimumFontSize="17" id="VSW-T1-NeB">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="27.82" borderStyle="roundedRect" minimumFontSize="17" id="VSW-T1-NeB">
                                         <rect key="frame" x="200" y="109" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" id="gNX-FN-obG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" id="gNX-FN-obG">
                                         <rect key="frame" x="85" y="185" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8.0" borderStyle="roundedRect" minimumFontSize="17" id="1js-w3-LQq">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8.0" borderStyle="roundedRect" minimumFontSize="17" id="1js-w3-LQq">
                                         <rect key="frame" x="200" y="186" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3305,7 +3306,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xNX-FN-LnH"/>
-        <segue reference="4gM-IJ-DGN"/>
+        <segue reference="N24-LE-Gn3"/>
+        <segue reference="FVR-Oe-NoX"/>
     </inferredMetricsTieBreakers>
 </document>
