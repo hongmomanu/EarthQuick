@@ -33,7 +33,7 @@
 	// Do any additional setup after loading the view.
     @autoreleasepool {
         self.configData = [[NSConfigData alloc]init];
-        NSLog(@"1111 %@",self.esriView);
+        //NSLog(@"1111 %@",self.esriView);
         self.esriView = [[esriView alloc] initWithFrame:self.conView.frame];
         self.esriView.delegate = self;
         [self.conView addSubview:self.esriView];

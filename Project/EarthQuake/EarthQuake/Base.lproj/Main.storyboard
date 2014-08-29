@@ -19,7 +19,7 @@
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_BotBg.png" id="NsW-p5-eaj">
-                                <rect key="frame" x="0.0" y="298" width="320" height="272"/>
+                                <rect key="frame" x="0.0" y="296" width="320" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             </imageView>
                             <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="jjN-Kw-kTR">
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="z12-gb-Rn7">
-                                <rect key="frame" x="136" y="174" width="100" height="100"/>
+                                <rect key="frame" x="24" y="179" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
@@ -46,8 +46,8 @@
                                     <action selector="feelAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PAl-3S-svP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="dG2-Kb-woh">
-                                <rect key="frame" x="24" y="174" width="100" height="100"/>
+                            <button hidden="YES" opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="dG2-Kb-woh">
+                                <rect key="frame" x="136" y="179" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
@@ -77,6 +77,13 @@
                                     <action selector="collectAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jum-JL-rck"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版权所有：浙江省地震监测预报研究中心" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="x2p-dr-07i">
+                                <rect key="frame" x="20" y="450" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                <color key="textColor" red="0.47626230373303147" green="0.78885055416022731" blue="0.9552798867225647" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -101,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="huE-lt-1iM" customClass="UIScrollView">
-                                <rect key="frame" x="8" y="84.999999676467866" width="305" height="475"/>
+                                <rect key="frame" x="8" y="84.99999951122706" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo.png" id="yHv-bn-uzH">
@@ -252,7 +259,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rcz-WF-NoG">
-                                <rect key="frame" x="7" y="84.999999173630158" width="305" height="475"/>
+                                <rect key="frame" x="7" y="85" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" id="0jV-ee-IjF">
@@ -438,7 +445,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView contentMode="scaleToFill" id="93K-9c-z9O">
-                                <rect key="frame" x="8" y="84.999999676467866" width="304" height="475"/>
+                                <rect key="frame" x="8" y="84.99999951122706" width="304" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSf-zU-oLS">
