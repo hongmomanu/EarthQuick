@@ -19,6 +19,15 @@
 -(void)CusSKViewControllerReturn:(CusSKViewController *)controller ;
 -(void)eqimViewReloadList:(CustomRecordSoap *) p_soap;
 
+@property (weak, nonatomic) NSString *maxX1;
+@property (nonatomic, strong) NSString *maxX2;
+@property (nonatomic, strong) NSString *maxY1;
+@property (nonatomic, strong) NSString *maxY2;
+@property (nonatomic, strong) NSString *minX1;
+@property (nonatomic, strong) NSString *minX2;
+@property (nonatomic, strong) NSString *minY1;
+@property (nonatomic, strong) NSString *minY2;
+
 @end
 @interface CusSKViewController : UIViewController<UITextFieldDelegate>
 @property (weak,nonatomic) id <CusSKViewControllerDelegate> delegate;
@@ -43,6 +52,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveBut;
 @property (weak, nonatomic) IBOutlet UITextField *mStartText;
 @property (weak, nonatomic) IBOutlet UITextField *mEndText;
+
+
 - (IBAction)onRadioBtn:(id)sender;
 
 - (IBAction)saveButAct:(id)sender;

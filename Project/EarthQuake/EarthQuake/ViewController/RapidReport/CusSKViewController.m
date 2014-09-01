@@ -51,7 +51,13 @@
     self.endLonText.text = [NSString stringWithFormat:@"%.3f",[[_selDic objectForKey:@"Maxx"] doubleValue]];
     self.mStartText.text = [NSString stringWithFormat:@"%.2f",[[_selDic objectForKey:@"Msmall"] doubleValue]];
     self.mEndText.text = [NSString stringWithFormat:@"%.2f",[[_selDic objectForKey:@"Mlarge"] doubleValue]];
-    //[self.radioButton setEnabled:false];
+   NSLog(@"log test %@",self.startLonText.text);
+    if ([self.startLonText.text isEqualToString:[self.delegate minX1] ] ) {
+        [self.radioButton setSelectedWithTag:0];
+    }else{
+        [self.radioButton setSelectedWithTag:1];
+    }
+    
     
     NSDictionary *cusSer = [_selDic objectForKey:@"TabCustomsers"];
     if (cusSer.count>0) {
@@ -210,15 +216,15 @@
 
 - (IBAction)onRadioBtn:(id)sender {
     if (_radioButton.selectedButton.tag == 0) {
-        _startLonText.text = @"119.67";
-        _startLatText.text = @"27.55";
-        _endLonText.text = @"120.25";
-        _endLatText.text = @"27.82";
+        _startLonText.text = [self.delegate minX1];//@"119.67";
+        _startLatText.text = [self.delegate minY1];//@"27.55";
+        _endLonText.text = [self.delegate maxX1];//@"120.25";
+        _endLatText.text = [self.delegate maxY1];//@"27.82";
     }else{
-        _startLonText.text = @"119.52";
-        _startLatText.text = @"27.98";
-        _endLonText.text = @"120.37";
-        _endLatText.text = @"28.2";
+        _startLonText.text =[self.delegate minX2]; //@"119.52";
+        _startLatText.text =[self.delegate minY2]; //@"27.98";
+        _endLonText.text =[self.delegate maxX2];// @"120.37";
+        _endLatText.text =[self.delegate maxY2]; //@"28.2";
     }
 }
 @end

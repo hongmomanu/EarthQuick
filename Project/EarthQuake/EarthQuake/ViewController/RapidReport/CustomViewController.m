@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -30,6 +31,17 @@
     self.cusTabBar.delegate = self;
     self.cusTabBar.selectedItem = self.messageBarItem;
     
+    self.maxX1=@"120.25";
+    self.maxX2=@"120.37";
+    self.maxY1=@"27.82";
+    self.maxY2=@"28.2";
+    self.minX1=@"119.670";
+    self.minX2=@"119.520";
+    self.minY1=@"27.55";
+    self.minY2=@"27.98";
+    self.skname1=@"珊溪水库";
+    self.skname2=@"滩坑水库";
+
     self.cusTabView.dataSource = self;
     self.cusTabView.delegate = self;
     self.cusTabView.rowHeight = 52.0f;
@@ -164,7 +176,18 @@
         cell.rightUtilityButtons = [self rightButtons];
         cell.delegate   = self;
         NSDictionary *cusInfoDic = [self.cusData objectAtIndex:indexPath.row];
-        cell.title = [[cusInfoDic objectForKey:@"TabCustomtype"] objectForKey:@"Name"];
+        NSString *skname;
+        NSString *cpMaxx= [NSString stringWithFormat:@"%@", [cusInfoDic objectForKey:@"Maxx"]];
+        
+        if([cpMaxx isEqualToString:self.maxX1]){
+            skname=[[@"(" stringByAppendingString: self.skname1] stringByAppendingString:@")"];
+        }else if([cpMaxx isEqualToString:self.maxX2]){
+           skname=[[@"(" stringByAppendingString: self.skname2] stringByAppendingString:@")"];
+        }else{
+        skname=@"";
+        }
+        
+        cell.title = [[[cusInfoDic objectForKey:@"TabCustomtype"] objectForKey:@"Name"] stringByAppendingString:skname];
         cell.type =[NSString stringWithFormat:@"大于%@，小于%@",[cusInfoDic objectForKey:@"Msmall"], [cusInfoDic objectForKey:@"Mlarge"]];
         return cell;
     }

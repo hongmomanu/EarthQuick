@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *partDescribe;
+@property (weak,nonatomic) IBOutlet UITextField *floorNum;
 @property (weak, nonatomic) IBOutlet UIButton *describeBut;
 @property (weak, nonatomic) IBOutlet UILabel *latlonLabel;
 - (IBAction)returnToMap:(id)sender;

@@ -58,6 +58,19 @@
 @property (weak, nonatomic) IBOutlet UITableView *cusTabView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mapToolItem;
 @property (weak, nonatomic) IBOutlet UITabBar *cusTabBar;
+@property (weak, nonatomic) NSString *maxX1;
+@property (nonatomic, strong) NSString *maxX2;
+@property (nonatomic, strong) NSString *maxY1;
+@property (nonatomic, strong) NSString *maxY2;
+@property (nonatomic, strong) NSString *minX1;
+@property (nonatomic, strong) NSString *minX2;
+@property (nonatomic, strong) NSString *minY1;
+@property (nonatomic, strong) NSString *minY2;
+@property (nonatomic, strong) NSString *skname1;
+@property (nonatomic, strong) NSString *skname2;
+
+
+
 
 - (IBAction)returnTomap:(id)sender;
 - (IBAction)enterTomap:(id)sender;

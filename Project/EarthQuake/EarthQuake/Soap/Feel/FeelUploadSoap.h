@@ -25,6 +25,7 @@
              Address:(NSString*)p_address
         SDescription:(NSString*)p_sDescription
         PDescription:(NSString*)p_pDescription
+             FloorNum:(NSString*)p_floornum
                 Date:(NSString*)p_date
                 Time:(NSString*)p_time;
 

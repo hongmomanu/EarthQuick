@@ -16,6 +16,7 @@
              Address:(NSString*)p_address
         SDescription:(NSString*)p_sDescription
         PDescription:(NSString*)p_pDescription
+             FloorNum:(NSString*)p_floornum
                 Date:(NSString*)p_date
                 Time:(NSString*)p_time{
     
@@ -31,6 +32,7 @@
                             @"p_address",
                             @"p_sDescription",
                             @"p_pDescription",
+                            @"p_floor",
                             @"p_date",
                             @"p_time",
                             nil];
@@ -41,6 +43,7 @@
                             p_address,
                             p_sDescription,
                             p_pDescription,
+                            p_floornum,
                             p_date,
                             p_time,
                             nil];

@@ -2353,6 +2353,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HQS-2E-gwL">
+                                        <rect key="frame" x="6" y="270" width="292" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" id="Q8O-li-vQh">
                                         <rect key="frame" x="83" y="11" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2361,14 +2368,21 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入描述" minimumFontSize="17" id="7CD-w6-Zcu">
-                                        <rect key="frame" x="83" y="202" width="200" height="30"/>
+                                        <rect key="frame" x="82" y="197" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入楼层" minimumFontSize="17" id="aqj-8M-WaU">
+                                        <rect key="frame" x="82" y="241" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙江省塘苗路7号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sS9-cD-nBd">
-                                        <rect key="frame" x="83" y="169" width="200" height="21"/>
+                                        <rect key="frame" x="83" y="168" width="200" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                         <nil key="highlightedColor"/>
@@ -2392,13 +2406,20 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="gSl-J0-BhC">
-                                        <rect key="frame" x="0.0" y="240" width="305" height="260"/>
+                                        <rect key="frame" x="0.0" y="278" width="305" height="224"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014年5月14日 18:00:23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kMc-HG-tqh">
                                         <rect key="frame" x="83" y="131" width="200" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所在楼层:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R6l-7A-79g">
+                                        <rect key="frame" x="9" y="241" width="65" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2413,6 +2434,7 @@
                         <outlet property="addressField" destination="sS9-cD-nBd" id="pVc-Fa-3S7"/>
                         <outlet property="dateLabel" destination="kMc-HG-tqh" id="nal-p9-u82"/>
                         <outlet property="describeBut" destination="R6F-oh-MWr" id="4C0-98-Ewp"/>
+                        <outlet property="floorNum" destination="aqj-8M-WaU" id="04f-85-wmw"/>
                         <outlet property="latlonLabel" destination="jiZ-2I-VKg" id="nw0-E3-rSR"/>
                         <outlet property="mediaView" destination="gSl-J0-BhC" id="RMY-Iu-Y40"/>
                         <outlet property="nameField" destination="Q8O-li-vQh" id="u6p-AV-obc"/>
@@ -3314,6 +3336,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="N24-LE-Gn3"/>
-        <segue reference="FVR-Oe-NoX"/>
+        <segue reference="xNX-FN-LnH"/>
     </inferredMetricsTieBreakers>
 </document>

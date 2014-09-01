@@ -43,6 +43,7 @@
     
     _partDescribe.delegate = self;
     _nameField.delegate = self;
+    _floorNum.delegate=self;
     
     self.media               = [[MediaView alloc] initWithFrame:self.mediaView.frame];
     self.media.supViewCon = self;
@@ -162,6 +163,7 @@
 - (IBAction)uploadFeel:(id)sender {
     //键盘隐藏
     [self textFieldShouldReturn:_partDescribe];
+    [self textFieldShouldReturn:_floorNum];
     //弹出等待友好界面
     _progressView = [_configData getAlert:@"上传中..."];
     [_progressView show];
@@ -181,6 +183,7 @@
                                 Address:_addressField.text
                            SDescription:_describeBut.titleLabel.text
                            PDescription:_partDescribe.text
+                               FloorNum:_floorNum.text
                                    Date:[[_dateLabel.text componentsSeparatedByString:@" "] objectAtIndex:0]
                                    Time:[[_dateLabel.text componentsSeparatedByString:@" "] objectAtIndex:1]];
 }
