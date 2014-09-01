@@ -43,6 +43,7 @@
 }
 
 -(void) initRe{
+    NSLog(@"init sk %@",_selDic);
     self.infoId = [[_selDic objectForKey:@"Id"] stringValue];
     self.startLatText.text = [NSString stringWithFormat:@"%.3f",[[_selDic objectForKey:@"Miny"] doubleValue]];
     self.startLonText.text = [NSString stringWithFormat:@"%.3f",[[_selDic objectForKey:@"Minx"] doubleValue]];
@@ -50,6 +51,7 @@
     self.endLonText.text = [NSString stringWithFormat:@"%.3f",[[_selDic objectForKey:@"Maxx"] doubleValue]];
     self.mStartText.text = [NSString stringWithFormat:@"%.2f",[[_selDic objectForKey:@"Msmall"] doubleValue]];
     self.mEndText.text = [NSString stringWithFormat:@"%.2f",[[_selDic objectForKey:@"Mlarge"] doubleValue]];
+    //[self.radioButton setEnabled:false];
     
     NSDictionary *cusSer = [_selDic objectForKey:@"TabCustomsers"];
     if (cusSer.count>0) {

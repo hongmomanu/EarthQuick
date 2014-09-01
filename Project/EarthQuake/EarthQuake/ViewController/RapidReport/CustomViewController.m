@@ -104,7 +104,7 @@
             }else{
                 
             }
-            NSLog(@"test log %@",@"sucesss");
+            //NSLog(@"test log %@",@"sucesss");
             [self.cusTabView reloadData];
             [_configData showAlert:p_soap.msg];
         } afterDelay:1.0];
@@ -213,6 +213,7 @@
                                    selectCell:[(NSArray *)_cusData objectAtIndex:indexPath.row]];
     }else{
         _selDic = [(NSArray *)_cusData objectAtIndex:indexPath.row];
+        
         NSString *cusField =[[[_selDic objectForKey:@"TabCustomtype"]objectForKey:@"Field"] description];
         if ([cusField isEqualToString:@"CzCataLogEx"]) {
             [self performSegueWithIdentifier:@"customTocuseqim" sender:nil];

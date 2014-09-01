@@ -135,10 +135,36 @@
         }
         [self.daysBarItem setTitle:self.days];
     }else if(actionSheet  == self.sortSheet){
-         NSLog(@"sort");
+        
+        [self sortMyArray:[actionSheet buttonTitleAtIndex:buttonIndex] actionSheet:actionSheet];
+        //[self ]
     }
 }
 
+-(void)sortMyArray: (NSString *)type actionSheet:(UIActionSheet *) actionSheet
+{
+    //NSLog(@"sort begin %@",param);
+    NSString *sortType;
+    if([type isEqualToString: @"震级"]){
+        sortType=@"M";
+        
+    }else{
+        sortType=@"SaveTime";
+    }
+    
+    
+    [self.sortBarItem setTitle:type];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortType  ascending:NO];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    self.eqimData=[(NSArray *)self.eqimData  sortedArrayUsingDescriptors:sortDescriptors];
+    
+    [self.tabView reloadData];
+    
+    //self.eqimData=mydata;
+}
 -(NSString *)disEqimType:(NSString *)type{
     NSString *eqimType;
     if ([type isEqualToString:@"Auto"]) {
