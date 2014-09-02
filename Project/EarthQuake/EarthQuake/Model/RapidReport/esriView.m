@@ -459,8 +459,8 @@
     CLLocationCoordinate2D loc = [newLocation coordinate];
 
     //NSLog(@"IS NIL TEST %@" ,@"位置发生变化");
-    NSLog(@"x位置 %f",loc.longitude);
-    NSLog(@"x位置 %f",loc.latitude);
+    //NSLog(@"x位置 %f",loc.longitude);
+    //NSLog(@"x位置 %f",loc.latitude);
     
     
     self.locationLayer = [self getLocationLayer:self.mapView x:loc.longitude y:loc.latitude];

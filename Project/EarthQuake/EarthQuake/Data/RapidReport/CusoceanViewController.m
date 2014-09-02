@@ -28,6 +28,13 @@
     [super viewDidLoad];
     self.mStartText.delegate = self;
     self.mEndText.delegate = self;
+    self.startLatText.delegate=self;
+    self.startLonText.delegate=self;
+    
+    self.endLatText.delegate=self;
+    self.endLonText.delegate=self;
+    
+
     
     
     self.configData = [[NSConfigData alloc]init];
@@ -102,7 +109,7 @@
  @result 空值
  */
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
+    //NSLog(@"huidianlememememe");
     [textField resignFirstResponder];
     return YES;
 }
@@ -143,6 +150,7 @@
         [_progressView close];
         [_configData performBlock:^{             
             [_configData showAlert:p_soap.msg];
+            [self.delegate eqimViewReloadList :p_soap];
              [self returnTOCUS:self];
         } afterDelay:1.0];
     } afterDelay:1.0];
@@ -209,4 +217,8 @@
                           conserStr:(NSString *) [smsState stringByAppendingFormat:@",%@",emailState]
                            province:(NSString *) @""];
 }
+- (IBAction)onRadioBtn:(id)sender {
+    
+}
+
 @end

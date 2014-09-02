@@ -19,6 +19,7 @@
 @class CusoceanViewController;
 @protocol CusoceanViewControllerDelegate <NSObject>;
 -(void)CusoceanViewControllerReturn:(CusoceanViewController *)controller ;
+-(void)eqimViewReloadList:(CustomRecordSoap *) p_soap;
 @end
 @interface CusoceanViewController : UIViewController<UITextFieldDelegate>
 @property (weak,nonatomic) id <CusoceanViewControllerDelegate > delegate;

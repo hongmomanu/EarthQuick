@@ -176,16 +176,17 @@
         cell.rightUtilityButtons = [self rightButtons];
         cell.delegate   = self;
         NSDictionary *cusInfoDic = [self.cusData objectAtIndex:indexPath.row];
-        NSString *skname;
+        NSString *skname=@"";
+        NSString *type=[[cusInfoDic objectForKey:@"TabCustomtype"] objectForKey:@"Field"];
         NSString *cpMaxx= [NSString stringWithFormat:@"%@", [cusInfoDic objectForKey:@"Maxx"]];
-        
-        if([cpMaxx isEqualToString:self.maxX1]){
-            skname=[[@"(" stringByAppendingString: self.skname1] stringByAppendingString:@")"];
-        }else if([cpMaxx isEqualToString:self.maxX2]){
-           skname=[[@"(" stringByAppendingString: self.skname2] stringByAppendingString:@")"];
-        }else{
-        skname=@"";
+        if([type isEqualToString:@"CzCataLogSk"]){
+            if([cpMaxx isEqualToString:self.maxX1]){
+                skname=[[@"(" stringByAppendingString: self.skname1] stringByAppendingString:@")"];
+            }else if([cpMaxx isEqualToString:self.maxX2]){
+                skname=[[@"(" stringByAppendingString: self.skname2] stringByAppendingString:@")"];
+            }
         }
+        
         
         cell.title = [[[cusInfoDic objectForKey:@"TabCustomtype"] objectForKey:@"Name"] stringByAppendingString:skname];
         cell.type =[NSString stringWithFormat:@"大于%@，小于%@",[cusInfoDic objectForKey:@"Msmall"], [cusInfoDic objectForKey:@"Mlarge"]];
@@ -242,6 +243,8 @@
             [self performSegueWithIdentifier:@"customTocuseqim" sender:nil];
         }else if ([cusField isEqualToString:@"CzCataLogSk"]){
             [self performSegueWithIdentifier:@"customTocussk" sender:nil];
+        }else if ([cusField isEqualToString:@"CzCataLogSO"]){
+            [self performSegueWithIdentifier:@"customToocean" sender:nil];
         }
     }
 }
@@ -301,7 +304,7 @@
             [self performSegueWithIdentifier:@"customTocussk" sender:nil];
         }else if (buttonIndex ==2 )
         {
-            //[self performSegueWithIdentifier:@"customToocean" sender:nil];
+            [self performSegueWithIdentifier:@"customToocean" sender:nil];
         
         }
 }

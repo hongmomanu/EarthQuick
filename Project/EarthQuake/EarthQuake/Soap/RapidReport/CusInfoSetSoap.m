@@ -52,6 +52,7 @@
                             p_province,
                             nil];
     
+    //NSLog(@"soap ocean,%@",vars);
     [_soap callSoapServiceWithParameters__functionName:@"SetInfoCus"
                                                   tags:tags
                                                   vars:vars
@@ -76,6 +77,9 @@
     }
     _success                        = [[jsonDic objectForKey:@"success"] boolValue];
     _msg                            = [jsonDic objectForKey:@"msg"];
+    //NSLog(@"soap ocean,%@",@"success");
+    //NSLog(@"soap ocean,%@",_msg);
+
          
     [self.delegate cusInfoSetSoapDidReturn:self];
 }
@@ -86,6 +90,8 @@
  */
 -(void)retriveErrorSYSoapTool:(NSError *)_error{
     _msg        = [NSString stringWithFormat:@"ERROR: %@", _error.localizedDescription];
+    //NSLog(@"soap ocean,%@",_msg);
+    //NSLog(@"soap ocean,%@",@"error");
     _success    = NO;
     [self.delegate cusInfoSetSoapDidReturn:self];
 }
