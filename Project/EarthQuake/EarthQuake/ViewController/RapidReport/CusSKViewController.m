@@ -153,8 +153,9 @@
     //友好界面隐藏
     
     [_configData performBlock:^{
-        [_progressView close];
+        
         [_configData performBlock:^{
+            [_progressView close];
             [_configData showAlert:p_soap.msg];
             [self.delegate eqimViewReloadList :p_soap];
             [self returnToCustom:self];

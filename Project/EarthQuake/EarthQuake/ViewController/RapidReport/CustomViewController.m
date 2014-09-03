@@ -109,7 +109,7 @@
 -(void)customRecordSoapDidReturn:(CustomRecordSoap *) p_soap{
     //友好界面隐藏
     [_configData performBlock:^{
-        [_progressView close];
+        
         [_configData performBlock:^{
             if (p_soap.success) {
             self.cusData = [p_soap.returnDic mutableCopy];
@@ -118,6 +118,7 @@
             }
             //NSLog(@"test log %@",@"sucesss");
             [self.cusTabView reloadData];
+            [_progressView close];
             [_configData showAlert:p_soap.msg];
         } afterDelay:1.0];
     } afterDelay:1.0];

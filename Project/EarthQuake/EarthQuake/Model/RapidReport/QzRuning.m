@@ -48,8 +48,9 @@
     double count = [[returnArr objectAtIndex:0] integerValue];
     //友好界面隐藏
     [_configData performBlock:^{
-        [_progressView close];
+        
         [_configData performBlock:^{
+            [_progressView close];
             if (p_soap.success && count >1) {
                 double runSum = [[returnArr objectAtIndex:1] integerValue];
                 double fullSum = [[returnArr objectAtIndex:1] integerValue];

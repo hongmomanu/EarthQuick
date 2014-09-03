@@ -63,8 +63,9 @@
     
     //友好界面隐藏
     [_configData performBlock:^{
-        [_progressView close];
+        
         [_configData performBlock:^{
+            [_progressView close];
             if (p_soap.success && count >1) {
                 double sum = [[returnArr objectAtIndex:1] integerValue];
                 [_configData showAlert: @"获取成功"];

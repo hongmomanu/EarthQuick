@@ -258,7 +258,7 @@
 -(void)preInfoSoapDidReturn:(PreInfoSoap *) p_soap{
     //友好界面隐藏
     [_configData performBlock:^{
-        [_progressView close];
+        
         [_configData performBlock:^{
             if (p_soap.success) {
                 [_preinfoData UpdateSaveType:[[_selDic objectForKey:@"InfoId"] description]
@@ -267,6 +267,7 @@
                 [_preinfoData UpdateSaveType:[[_selDic objectForKey:@"InfoId"] description]
                                     SaveType:@"2"];
             }
+            [_progressView close];
             [_configData showAlert:p_soap.msg];
             
             //刷新数据
