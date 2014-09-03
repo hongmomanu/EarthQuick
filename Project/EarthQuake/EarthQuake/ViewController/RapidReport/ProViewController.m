@@ -126,6 +126,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     NSString *cellIdentifier = @"proCell";
     
     UITableViewCell *cell           = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -133,6 +134,8 @@
 
     if ([[[self.selectionArr objectAtIndex:indexPath.section]  objectAtIndex:indexPath.row] boolValue]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        cell.tintColor = [UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0];
     }else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -143,15 +146,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //NSLog(@"test pro 2222222");
+    
     NSInteger row =[indexPath row];
+    
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     NSIndexPath * neverIndexpath =[NSIndexPath indexPathForRow:0 inSection:0];
     UITableViewCell * neverCell = [tableView cellForRowAtIndexPath:neverIndexpath];
+    [self.proTable deselectRowAtIndexPath:indexPath animated:NO];
     if (row>=0) {
         //选中weekday则取消never选中
         //切换cell的选中状态
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             //取消选中状态
+            NSLog(@"test pro %@",@"hello un selected");
             cell.accessoryType = UITableViewCellAccessoryNone;
             //修改选中状态数组种的相关状态
             [[self.selectionArr objectAtIndex:indexPath.section] replaceObjectAtIndex:row withObject:[NSNumber numberWithBool:NO]];
@@ -159,7 +167,9 @@
         }else if (cell.accessoryType == UITableViewCellAccessoryNone)
         {
             //设置选中状态
+            NSLog(@"test pro %@",@"hello selected");
             cell.accessoryType =UITableViewCellAccessoryCheckmark;
+            cell.tintColor = [UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0];
             //修改选中状态数组中的相关状态
             [[self.selectionArr objectAtIndex:indexPath.section] replaceObjectAtIndex:row withObject:[NSNumber numberWithBool:YES]];
         }
@@ -172,6 +182,7 @@
             [tableView reloadData];
         }
     }
+      //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

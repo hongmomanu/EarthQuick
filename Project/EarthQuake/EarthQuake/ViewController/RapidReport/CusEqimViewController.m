@@ -111,6 +111,7 @@
 }
 
 -(void)proViewControllerSave:(ProViewController *)controller selectData:(NSString *) selectData{
+    
     self.proLabel.text = selectData;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

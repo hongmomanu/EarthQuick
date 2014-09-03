@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mStartText.delegate = self;
+    
     self.mEndText.delegate = self;
     self.startLatText.delegate=self;
     self.startLonText.delegate=self;
