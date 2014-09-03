@@ -32,21 +32,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     @autoreleasepool {
+        self.eqimSoap = [[EqimSoap alloc]init];
+        self.eqimSoap.delegate = self;
+        
         self.configData = [[NSConfigData alloc]init];
-        //NSLog(@"1111 %@",self.esriView);
+        
         self.esriView = [[esriView alloc] initWithFrame:self.conView.frame];
         self.esriView.delegate = self;
+        
+        self.type = @"Auto";
+        self.days = @"30";
+        
+        [self.eqimSoap getCataLogEx:self.type Day:self.days];
+        
         [self.conView addSubview:self.esriView];
         
         self.tabBar.selectedItem = self.eqimBarItem;
         self.tabBar.delegate = self;
         
-        self.type = @"Auto";
-        self.days = @"30";
         
-        self.eqimSoap = [[EqimSoap alloc]init];
-        self.eqimSoap.delegate = self;
-        [self.eqimSoap getCataLogEx:self.type Day:self.days];
+       
+        
     }
     
  
@@ -55,9 +61,8 @@
 
 -(void)eqimSoapDidReturn:(EqimSoap *) p_soap eqimData:(NSDictionary *) p_eqimData{
     
+    
     [self.esriView addEqimLayer:p_eqimData select:nil];
-    //NSLog(@"测试1 %@",p_soap);
-    //NSLog(@"测试2 %@",p_eqimData);
     
 }
 
