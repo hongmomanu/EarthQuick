@@ -53,6 +53,11 @@
         self.feelViewController = [segue destinationViewController];
         self.feelViewController.delegate = self;
     }
+    else if([[segue identifier]  isEqualToString:@"homeTosentiment"]){
+        self.sentimentViewController = [segue destinationViewController];
+        self.sentimentViewController.delegate = self;
+    }
+    
 }
 
 - (IBAction)userBtnAct:(id)sender {
@@ -81,11 +86,15 @@
 }
 
 - (IBAction)sentimentAct:(id)sender {
-    [self performSegueWithIdentifier:@"homeTofeel" sender:nil];
+    [self performSegueWithIdentifier:@"homeTosentiment" sender:nil];
 }
 
 
 -(void)feelViewControllerReturn:(FeelViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)sentimentViewControllerReturn:(SentimentViewController *)controller{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

@@ -21,6 +21,7 @@
     NSString *soapUrl;
     NSMutableArray *tags;
     NSMutableArray *vars;
+    NSString *respType;
     
     
 }
@@ -107,7 +108,8 @@
 }
 
 
--(void)callSoapServiceWithParameters__functionName:(NSString*)___functionName tags:(NSMutableArray*)___tags vars:(NSMutableArray*)___vars wsdlURL:(NSString*)___url{
+
+-(void)callSoapServiceWithParameters__functionName:(NSString*)___functionName tags:(NSMutableArray*)___tags vars:(NSMutableArray*)___vars wsdlURL:(NSString*)___url {
     
     functionName =     ___functionName;
     soapUrl      =     ___url;
@@ -116,7 +118,7 @@
     
     [self startSoapTool:1];
     
-  
+    
 }
 
 -(void)serviceDone{
@@ -176,19 +178,20 @@
 		
 		NSString * tmp = [[NSString alloc] initWithFormat:@"%@",LaStr];
      
-//        NSLog(@"LaStr:%@",LaStr);
+        //NSLog(@"LaStr:%@",LaStr);
         
-//        NSLog(@"%@",tmp);
         
 		NSData* tmp_Data = [tmp dataUsingEncoding: NSUTF8StringEncoding];
 		
         parser = [[SYXmlParser alloc]initWithData:tmp_Data];
         
-        [parser startParser];   
+        [parser startParser];
+        
+        
         
         if([parser theDataArray]!= nil && [[parser theDataArray]count]!= 0)
         {
-//            NSLog(@"看看5");
+           //NSLog(@"看看5");
             
             resultArray = [[NSMutableArray alloc]initWithArray:[parser theDataArray]];
             

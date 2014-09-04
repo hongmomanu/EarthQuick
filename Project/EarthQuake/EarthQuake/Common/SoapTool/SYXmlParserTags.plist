@@ -23,5 +23,6 @@
 	<string>GetCzCatalogResult</string>
 	<string>UploadImageResult</string>
 	<string>VideoImageResult</string>
+	<string>GetPublicSentimentListResult</string>
 </array>
 </plist>

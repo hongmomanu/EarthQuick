@@ -13,6 +13,7 @@
 #import "EqimViewController.h"
 #import "CollectViewController.h"
 #import "FeelViewController.h"
+#import "SentimentViewController.h"
 
 @interface ViewController : UIViewController<LogininViewControllerDelegate,LoginoffViewControllerDelegate,EqimViewControllerDelegate,CollectViewControllerDelegate,FeelViewControllerDelegate>
 
@@ -23,6 +24,7 @@
 @property (strong,nonatomic) EqimViewController *eqimViewController;
 @property (strong,nonatomic) CollectViewController *collectViewController;
 @property (strong,nonatomic) FeelViewController *feelViewController;
+@property (strong,nonatomic) SentimentViewController *sentimentViewController;
 
 - (IBAction)userBtnAct:(id)sender;
 - (IBAction)rapidReportAct:(id)sender;

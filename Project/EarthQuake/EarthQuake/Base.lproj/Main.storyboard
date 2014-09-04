@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YWY-KL-Err">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -46,7 +46,7 @@
                                     <action selector="feelAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PAl-3S-svP"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="dG2-Kb-woh">
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="dG2-Kb-woh">
                                 <rect key="frame" x="136" y="179" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
@@ -55,6 +55,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="homeBtnYQSel.png"/>
+                                <connections>
+                                    <action selector="sentimentAct:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kxv-EX-OTc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vFN-ZL-daJ">
                                 <rect key="frame" x="252" y="64" width="40" height="40"/>
@@ -93,24 +96,64 @@
                         <segue destination="CXX-8w-fnP" kind="modal" identifier="homeTorapidReport" id="rv6-Rn-r5S"/>
                         <segue destination="YA0-KI-yhq" kind="modal" identifier="homeTocollect" id="7fZ-Ln-PrB"/>
                         <segue destination="Rab-yD-5i8" kind="modal" identifier="homeTofeel" id="veo-MP-LZd"/>
-                        <segue destination="YWY-KL-Err" kind="modal" id="cn9-LP-uZe"/>
+                        <segue destination="YWY-KL-Err" kind="modal" identifier="homeTosentiment" id="cn9-LP-uZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="474"/>
         </scene>
-        <!--View Controller-->
+        <!--Sentiment View Controller - 舆情-->
         <scene sceneID="ERv-PE-LY2">
             <objects>
-                <viewController id="YWY-KL-Err" sceneMemberID="viewController">
+                <viewController title="舆情" id="YWY-KL-Err" customClass="SentimentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="497-3b-FLI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="4m1-ac-kCj">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.13333334029999999" green="0.7607843876" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="舆情信息" id="Ves-xO-DoF">
+                                        <barButtonItem key="leftBarButtonItem" image="toolBack.png" id="Q5t-8H-VU1">
+                                            <connections>
+                                                <segue destination="5ZO-TP-fX8" kind="unwind" unwindAction="unwindToList:" id="dRG-ya-vBA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DFV-Ic-vTb">
+                                <rect key="frame" x="8" y="64" width="305" height="504"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentimentCell" id="fqc-A7-h1K">
+                                        <rect key="frame" x="0.0" y="22" width="305" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqc-A7-h1K" id="2xk-hx-yV2">
+                                            <rect key="frame" x="0.0" y="0.0" width="305" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="sentimentTabView" destination="DFV-Ic-vTb" id="kgX-Mz-byN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd6-Gm-SD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5ZO-TP-fX8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="47" y="1171"/>
         </scene>
@@ -123,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="huE-lt-1iM" customClass="UIScrollView">
-                                <rect key="frame" x="8" y="84.999999839381175" width="305" height="475"/>
+                                <rect key="frame" x="8" y="84.999999513970806" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo.png" id="yHv-bn-uzH">
@@ -274,7 +317,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rcz-WF-NoG">
-                                <rect key="frame" x="7" y="84.999999839381175" width="305" height="475"/>
+                                <rect key="frame" x="7" y="85.000000329609747" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" id="0jV-ee-IjF">
@@ -460,7 +503,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView contentMode="scaleToFill" id="93K-9c-z9O">
-                                <rect key="frame" x="8" y="84.999999839381175" width="304" height="475"/>
+                                <rect key="frame" x="8" y="84.99999951122706" width="304" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSf-zU-oLS">

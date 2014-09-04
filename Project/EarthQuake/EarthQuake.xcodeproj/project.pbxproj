@@ -239,6 +239,11 @@
 		63D591CF19206BB300DDEF34 /* esriView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D591C719206BB300DDEF34 /* esriView.xib */; };
 		63D591D019206BB300DDEF34 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D591C919206BB300DDEF34 /* Province.m */; };
 		63D591D119206BB300DDEF34 /* QueryParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D591CB19206BB300DDEF34 /* QueryParams.m */; };
+		63D8B23D19B708370011A6F0 /* SentimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B23C19B708370011A6F0 /* SentimentViewController.m */; };
+		63D8B24419B7FFD70011A6F0 /* SentimentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B24319B7FFD70011A6F0 /* SentimentTableView.m */; };
+		63D8B24A19B80A5F0011A6F0 /* SentimentSoap.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B24919B80A5F0011A6F0 /* SentimentSoap.m */; };
+		63D8B24E19B84DB70011A6F0 /* SentimentTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B24C19B84DB70011A6F0 /* SentimentTabCell.m */; };
+		63D8B24F19B84DB70011A6F0 /* SentimentTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D8B24D19B84DB70011A6F0 /* SentimentTabCell.xib */; };
 		63D928CF1945827B003F869F /* returnMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928CD1945827B003F869F /* returnMap.png */; };
 		63D928D01945827B003F869F /* returnMap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928CE1945827B003F869F /* returnMap@2x.png */; };
 		63D928E519458841003F869F /* ColLoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928DD19458841003F869F /* ColLoc.png */; };
@@ -742,6 +747,15 @@
 		63D591C919206BB300DDEF34 /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
 		63D591CA19206BB300DDEF34 /* QueryParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryParams.h; sourceTree = "<group>"; };
 		63D591CB19206BB300DDEF34 /* QueryParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryParams.m; sourceTree = "<group>"; };
+		63D8B23B19B708370011A6F0 /* SentimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentViewController.h; sourceTree = "<group>"; };
+		63D8B23C19B708370011A6F0 /* SentimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentViewController.m; sourceTree = "<group>"; };
+		63D8B24219B7FFD70011A6F0 /* SentimentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentTableView.h; sourceTree = "<group>"; };
+		63D8B24319B7FFD70011A6F0 /* SentimentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentTableView.m; sourceTree = "<group>"; };
+		63D8B24819B80A5F0011A6F0 /* SentimentSoap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentSoap.h; sourceTree = "<group>"; };
+		63D8B24919B80A5F0011A6F0 /* SentimentSoap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentSoap.m; sourceTree = "<group>"; };
+		63D8B24B19B84DB60011A6F0 /* SentimentTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentTabCell.h; sourceTree = "<group>"; };
+		63D8B24C19B84DB70011A6F0 /* SentimentTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentTabCell.m; sourceTree = "<group>"; };
+		63D8B24D19B84DB70011A6F0 /* SentimentTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SentimentTabCell.xib; sourceTree = "<group>"; };
 		63D928CD1945827B003F869F /* returnMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = returnMap.png; sourceTree = "<group>"; };
 		63D928CE1945827B003F869F /* returnMap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnMap@2x.png"; sourceTree = "<group>"; };
 		63D928DD19458841003F869F /* ColLoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColLoc.png; sourceTree = "<group>"; };
@@ -1072,6 +1086,7 @@
 		6332366618F3E1DB00F7E260 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				63D8B23E19B708570011A6F0 /* Sentiment */,
 				6314C42A19405A62002B2B97 /* Feel */,
 				634D61891925DFA200327F7C /* LogininViewController.h */,
 				634D618A1925DFA300327F7C /* LogininViewController.m */,
@@ -1092,6 +1107,7 @@
 		6332366718F3E1E500F7E260 /* Soap */ = {
 			isa = PBXGroup;
 			children = (
+				63D8B24519B809550011A6F0 /* Sentiment */,
 				63D929131945A79B003F869F /* Feel */,
 				63D591A1192069E100DDEF34 /* Collect */,
 				63D591A2192069E100DDEF34 /* RapidReport */,
@@ -1379,6 +1395,9 @@
 				63E9F11E194E9CBC006423FC /* CusInfoCell.xib */,
 				63E9F120194E9CEA006423FC /* CusInfoCell.h */,
 				63E9F121194E9CEA006423FC /* CusInfoCell.m */,
+				63D8B24B19B84DB60011A6F0 /* SentimentTabCell.h */,
+				63D8B24C19B84DB70011A6F0 /* SentimentTabCell.m */,
+				63D8B24D19B84DB70011A6F0 /* SentimentTabCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1653,6 +1672,26 @@
 			);
 			name = RapidReport;
 			path = Model/RapidReport;
+			sourceTree = "<group>";
+		};
+		63D8B23E19B708570011A6F0 /* Sentiment */ = {
+			isa = PBXGroup;
+			children = (
+				63D8B24219B7FFD70011A6F0 /* SentimentTableView.h */,
+				63D8B24319B7FFD70011A6F0 /* SentimentTableView.m */,
+				63D8B23B19B708370011A6F0 /* SentimentViewController.h */,
+				63D8B23C19B708370011A6F0 /* SentimentViewController.m */,
+			);
+			name = Sentiment;
+			sourceTree = "<group>";
+		};
+		63D8B24519B809550011A6F0 /* Sentiment */ = {
+			isa = PBXGroup;
+			children = (
+				63D8B24819B80A5F0011A6F0 /* SentimentSoap.h */,
+				63D8B24919B80A5F0011A6F0 /* SentimentSoap.m */,
+			);
+			name = Sentiment;
 			sourceTree = "<group>";
 		};
 		63D928ED19458B74003F869F /* Com */ = {
@@ -1950,6 +1989,7 @@
 				63C9A7B419448FB500BDA45F /* icon120.png in Resources */,
 				6313FF3E1946A9AF00FAC1F6 /* RapSet@2x.png in Resources */,
 				633229C0196CE9FA002AA2EA /* 2.png in Resources */,
+				63D8B24F19B84DB70011A6F0 /* SentimentTabCell.xib in Resources */,
 				63D4B84419449BD6003B0D4B /* icon57.png in Resources */,
 				634D61551922039000327F7C /* close.png in Resources */,
 				633229C8196D236F002AA2EA /* btn_nor.png in Resources */,
@@ -2004,6 +2044,8 @@
 				63301471191C6DB700BD19F5 /* FMDatabaseQueue.m in Sources */,
 				634D612C1921EB0100327F7C /* RadioButton.m in Sources */,
 				6380AEFC1929B24A009AD8FC /* NSMutableArray+SWUtilityButtons.m in Sources */,
+				63D8B24419B7FFD70011A6F0 /* SentimentTableView.m in Sources */,
+				63D8B23D19B708370011A6F0 /* SentimentViewController.m in Sources */,
 				630D467819388A6600DFFA58 /* AbstractActionSheetPicker.m in Sources */,
 				85B4879519965AED00C7D6AC /* ImageSoap.m in Sources */,
 				6330145A191C691500BD19F5 /* TianDiTuWMTSLayerInfo.m in Sources */,
@@ -2062,6 +2104,8 @@
 				6397EB23193DAC3100F5E93D /* CzRuning.m in Sources */,
 				6332364218F3DCE200F7E260 /* AppDelegate.m in Sources */,
 				633E76441934509F006FD739 /* MRBlurView.m in Sources */,
+				63D8B24A19B80A5F0011A6F0 /* SentimentSoap.m in Sources */,
+				63D8B24E19B84DB70011A6F0 /* SentimentTabCell.m in Sources */,
 				633E76571935C1E5006FD739 /* MacinfoSoap.m in Sources */,
 				634D6164192209A200327F7C /* SimDescribePanel.m in Sources */,
 				633E7650193477EF006FD739 /* PubInfoSoap.m in Sources */,
