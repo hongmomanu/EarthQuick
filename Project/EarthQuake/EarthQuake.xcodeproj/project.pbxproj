@@ -244,6 +244,11 @@
 		63D8B24A19B80A5F0011A6F0 /* SentimentSoap.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B24919B80A5F0011A6F0 /* SentimentSoap.m */; };
 		63D8B24E19B84DB70011A6F0 /* SentimentTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B24C19B84DB70011A6F0 /* SentimentTabCell.m */; };
 		63D8B24F19B84DB70011A6F0 /* SentimentTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D8B24D19B84DB70011A6F0 /* SentimentTabCell.xib */; };
+		63D8B25319B949970011A6F0 /* RCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B25219B949970011A6F0 /* RCLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63D8B25719B94A2F0011A6F0 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B25619B94A2F0011A6F0 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63D8B25C19B94AB20011A6F0 /* RCViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B25919B94AB20011A6F0 /* RCViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63D8B26219B94D3D0011A6F0 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D8B26119B94D3D0011A6F0 /* libicucore.dylib */; };
+		63D8B26519B95AD70011A6F0 /* SentimentDeatiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8B26419B95AD70011A6F0 /* SentimentDeatiController.m */; };
 		63D928CF1945827B003F869F /* returnMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928CD1945827B003F869F /* returnMap.png */; };
 		63D928D01945827B003F869F /* returnMap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928CE1945827B003F869F /* returnMap@2x.png */; };
 		63D928E519458841003F869F /* ColLoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D928DD19458841003F869F /* ColLoc.png */; };
@@ -756,6 +761,15 @@
 		63D8B24B19B84DB60011A6F0 /* SentimentTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentTabCell.h; sourceTree = "<group>"; };
 		63D8B24C19B84DB70011A6F0 /* SentimentTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentTabCell.m; sourceTree = "<group>"; };
 		63D8B24D19B84DB70011A6F0 /* SentimentTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SentimentTabCell.xib; sourceTree = "<group>"; };
+		63D8B25119B949970011A6F0 /* RCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLabel.h; sourceTree = "<group>"; };
+		63D8B25219B949970011A6F0 /* RCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLabel.m; sourceTree = "<group>"; };
+		63D8B25519B94A2F0011A6F0 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		63D8B25619B94A2F0011A6F0 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		63D8B25819B94AB20011A6F0 /* RCViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCViewCell.h; sourceTree = "<group>"; };
+		63D8B25919B94AB20011A6F0 /* RCViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewCell.m; sourceTree = "<group>"; };
+		63D8B26119B94D3D0011A6F0 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libicucore.dylib; sourceTree = "<group>"; };
+		63D8B26319B95AD70011A6F0 /* SentimentDeatiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentimentDeatiController.h; sourceTree = "<group>"; };
+		63D8B26419B95AD70011A6F0 /* SentimentDeatiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentimentDeatiController.m; sourceTree = "<group>"; };
 		63D928CD1945827B003F869F /* returnMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = returnMap.png; sourceTree = "<group>"; };
 		63D928CE1945827B003F869F /* returnMap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnMap@2x.png"; sourceTree = "<group>"; };
 		63D928DD19458841003F869F /* ColLoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColLoc.png; sourceTree = "<group>"; };
@@ -840,6 +854,7 @@
 				633236BF18F3EC5500F7E260 /* QuartzCore.framework in Frameworks */,
 				633236BB18F3EC3E00F7E260 /* CoreText.framework in Frameworks */,
 				633236B918F3EC1700F7E260 /* MobileCoreServices.framework in Frameworks */,
+				63D8B26219B94D3D0011A6F0 /* libicucore.dylib in Frameworks */,
 				633236B718F3EC0E00F7E260 /* libz.dylib in Frameworks */,
 				633236B518F3EBFC00F7E260 /* Security.framework in Frameworks */,
 				633236B318F3EBDE00F7E260 /* MediaPlayer.framework in Frameworks */,
@@ -1014,6 +1029,7 @@
 		6332363018F3DCE200F7E260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63D8B26119B94D3D0011A6F0 /* libicucore.dylib */,
 				85B9C4A619885B03001494C1 /* libc++.dylib */,
 				85B9C4A1198857F4001494C1 /* ArcGIS.framework */,
 				639CAFC0196AB5E5007DA524 /* AVFoundation.framework */,
@@ -1118,6 +1134,7 @@
 		6332366818F3E1F300F7E260 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63D8B25019B949640011A6F0 /* plugins */,
 				85B29F611993CF9D0059C012 /* SJAvatarBrowser */,
 				857F3C0C199269C4004A2C26 /* EasyTableView */,
 				85B68E0F198FE2F6005D1A13 /* SGFocusImageFrame */,
@@ -1681,6 +1698,8 @@
 				63D8B24319B7FFD70011A6F0 /* SentimentTableView.m */,
 				63D8B23B19B708370011A6F0 /* SentimentViewController.h */,
 				63D8B23C19B708370011A6F0 /* SentimentViewController.m */,
+				63D8B26319B95AD70011A6F0 /* SentimentDeatiController.h */,
+				63D8B26419B95AD70011A6F0 /* SentimentDeatiController.m */,
 			);
 			name = Sentiment;
 			sourceTree = "<group>";
@@ -1692,6 +1711,27 @@
 				63D8B24919B80A5F0011A6F0 /* SentimentSoap.m */,
 			);
 			name = Sentiment;
+			sourceTree = "<group>";
+		};
+		63D8B25019B949640011A6F0 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				63D8B25419B94A180011A6F0 /* richlabel */,
+			);
+			name = plugins;
+			sourceTree = "<group>";
+		};
+		63D8B25419B94A180011A6F0 /* richlabel */ = {
+			isa = PBXGroup;
+			children = (
+				63D8B25819B94AB20011A6F0 /* RCViewCell.h */,
+				63D8B25919B94AB20011A6F0 /* RCViewCell.m */,
+				63D8B25119B949970011A6F0 /* RCLabel.h */,
+				63D8B25219B949970011A6F0 /* RCLabel.m */,
+				63D8B25519B94A2F0011A6F0 /* RegexKitLite.h */,
+				63D8B25619B94A2F0011A6F0 /* RegexKitLite.m */,
+			);
+			name = richlabel;
 			sourceTree = "<group>";
 		};
 		63D928ED19458B74003F869F /* Com */ = {
@@ -2081,6 +2121,7 @@
 				633E76471934509F006FD739 /* MRCircularProgressView.m in Sources */,
 				63301450191C690100BD19F5 /* IBActionSheet.m in Sources */,
 				633E764C1934509F006FD739 /* MRMessageInterceptor.m in Sources */,
+				63D8B26519B95AD70011A6F0 /* SentimentDeatiController.m in Sources */,
 				63D591B3192069E100DDEF34 /* CusInfoSetSoap.m in Sources */,
 				634D615B1922039000327F7C /* UAModalPanel.m in Sources */,
 				63301475191C7A0F00BD19F5 /* TianDiTuData.m in Sources */,
@@ -2107,6 +2148,7 @@
 				63D8B24A19B80A5F0011A6F0 /* SentimentSoap.m in Sources */,
 				63D8B24E19B84DB70011A6F0 /* SentimentTabCell.m in Sources */,
 				633E76571935C1E5006FD739 /* MacinfoSoap.m in Sources */,
+				63D8B25C19B94AB20011A6F0 /* RCViewCell.m in Sources */,
 				634D6164192209A200327F7C /* SimDescribePanel.m in Sources */,
 				633E7650193477EF006FD739 /* PubInfoSoap.m in Sources */,
 				63E9F122194E9CEA006423FC /* CusInfoCell.m in Sources */,
@@ -2123,6 +2165,7 @@
 				635B2ADC193EF80F00A549B4 /* QzRuning.m in Sources */,
 				6330145C191C691500BD19F5 /* TianDiTuWMTSTileOperation.m in Sources */,
 				634D61881924BBE200327F7C /* Intensity.m in Sources */,
+				63D8B25719B94A2F0011A6F0 /* RegexKitLite.m in Sources */,
 				6330146E191C6DB700BD19F5 /* FMDatabase.m in Sources */,
 				63301446191C68D600BD19F5 /* DesUtil.m in Sources */,
 				634D615E1922039000327F7C /* UANoisyGradientBackground.m in Sources */,
@@ -2143,6 +2186,7 @@
 				85E8BBA41997173200D36C2E /* VideoSoap.m in Sources */,
 				63614AC9194AFFD300393CF8 /* CusInfoCusByUserIdSoap.m in Sources */,
 				639DE9FF191B8BCC00F0A993 /* ViewController.m in Sources */,
+				63D8B25319B949970011A6F0 /* RCLabel.m in Sources */,
 				63301434191C628700BD19F5 /* EGORefreshTableHeaderView.m in Sources */,
 				63301447191C68D600BD19F5 /* GTMBase64.m in Sources */,
 			);
@@ -2355,6 +2399,10 @@
 				GCC_PREFIX_HEADER = "EarthQuake/EarthQuake-Prefix.pch";
 				INFOPLIST_FILE = "EarthQuake/EarthQuake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -2393,6 +2441,10 @@
 				GCC_PREFIX_HEADER = "EarthQuake/EarthQuake-Prefix.pch";
 				INFOPLIST_FILE = "EarthQuake/EarthQuake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NSConfigData.h"
+
 #import "LogininViewController.h"
 #import "LoginoffViewController.h"
 #import "EqimViewController.h"
@@ -18,13 +19,14 @@
 @interface ViewController : UIViewController<LogininViewControllerDelegate,LoginoffViewControllerDelegate,EqimViewControllerDelegate,CollectViewControllerDelegate,FeelViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *userDic;
+@property (strong,nonatomic) SentimentViewController *sentimentViewController;
 @property (strong,nonatomic) NSConfigData *configData;
 @property (strong,nonatomic) LogininViewController *logininViewController;
 @property (strong,nonatomic) LoginoffViewController *loginoffViewController;
 @property (strong,nonatomic) EqimViewController *eqimViewController;
 @property (strong,nonatomic) CollectViewController *collectViewController;
 @property (strong,nonatomic) FeelViewController *feelViewController;
-@property (strong,nonatomic) SentimentViewController *sentimentViewController;
+
 
 - (IBAction)userBtnAct:(id)sender;
 - (IBAction)rapidReportAct:(id)sender;
