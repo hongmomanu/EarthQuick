@@ -14,6 +14,7 @@
 @protocol SentimentSoapDelegate
 
 -(void)sentimentSoapDidReturn:(SentimentSoap *) p_soap sentimentData:(NSDictionary *) p_sentimentData;
+-(void)sentimentSoapFailReturn;
 @end
 
 @interface SentimentSoap : NSObject<SOAPToolDelegate>

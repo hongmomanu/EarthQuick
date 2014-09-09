@@ -23,6 +23,8 @@
     NSMutableArray *vars = [[NSMutableArray alloc]initWithObjects:p_pi,
                             p_pPageNo,nil];
     
+    NSLog(@"vars %@",vars);
+    
     
     [_soap callSoapServiceWithParameters__functionName:@"GetPublicSentimentList"
                                                   tags:tags
@@ -48,13 +50,21 @@
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:result
                                                             options:kNilOptions
                                                               error:&error];
-    //NSLog(@"测试 %@",jsonDic);
-    if ([[jsonDic objectForKey:@"success"] boolValue]) {
-        [self.delegate sentimentSoapDidReturn:self sentimentData:[jsonDic objectForKey:@"data"]];
-    }else{
-        self.msg = [jsonDic objectForKey:@"msg"];
-        ALERT(self.msg);
+    //NSLog(@"测试11 %@",jsonDic);
+    if(jsonDic==nil){
+        //NSLog(@"测试2222 %@",jsonDic);
+        [self.delegate sentimentSoapFailReturn];
     }
+    else{
+        
+        if ([[jsonDic objectForKey:@"success"] boolValue]) {
+            [self.delegate sentimentSoapDidReturn:self sentimentData:[jsonDic objectForKey:@"data"]];
+        }else{
+            self.msg = [jsonDic objectForKey:@"msg"];
+            ALERT(self.msg);
+        }
+    }
+    
 }
 /*!
  @method
@@ -62,8 +72,9 @@
  @result 空值
  */
 -(void)retriveErrorSYSoapTool:(NSError *)_error{
-    NSLog(@"eroor");
+    //NSLog(@"eroor");
     self.msg = [NSString stringWithFormat:@"ERROR: %@", _error.localizedDescription];
-    ALERT(self.msg);
+    //ALERT(self.msg);
+    [self.delegate sentimentSoapFailReturn];
 }
 @end

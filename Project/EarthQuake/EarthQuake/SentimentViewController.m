@@ -170,7 +170,18 @@
     [self.sentimentTabView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
+-(void)sentimentSoapFailReturn{
+    [_configData performBlock:^{
+        
+        [_progressView close];
+        [_configData showAlert:@"加载失败"];
+        
+        
+        
+    } afterDelay:1.0];
 
+
+}
 -(void)sentimentSoapDidReturn:(SentimentSoap *) p_soap sentimentData:(NSDictionary *)p_data{
     
 
