@@ -7,6 +7,7 @@
 //
 
 #import "SentimentViewController.h"
+#define PROSENTIMENT @"YQZD"
 
 @interface SentimentViewController ()
 
@@ -144,6 +145,7 @@
 -(void)loadMore
 {   //当你按下这个按钮的时候, 意味着你需要看下一页了, 因此当前页码加1
    
+    //NSLog(@"1212121 %@",[self.configData getUserDic]);
     int currentPage=[self.page intValue] ;
     currentPage++;
     self.page=[@(currentPage) stringValue];

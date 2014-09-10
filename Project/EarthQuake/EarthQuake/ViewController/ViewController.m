@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#define SENTIMENT @"YQZD"
+#define ALERT(msg) {UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"浙江地震信息网" message:msg delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];[alert show];}
 
 @interface ViewController ()
 
@@ -54,8 +56,11 @@
         self.feelViewController.delegate = self;
     }
     else if([[segue identifier]  isEqualToString:@"homeTosentiment"]){
+       
         self.sentimentViewController = [segue destinationViewController];
         self.sentimentViewController.delegate = self;
+        
+        
     }
     
 }
@@ -86,7 +91,13 @@
 }
 
 - (IBAction)sentimentAct:(id)sender {
-    [self performSegueWithIdentifier:@"homeTosentiment" sender:nil];
+    if ([self.configData getUserRole:SENTIMENT]) {
+        
+        [self performSegueWithIdentifier:@"homeTosentiment" sender:nil];
+    }else{
+        ALERT(@"没有相关的权限");
+    }
+    
 }
 
 
