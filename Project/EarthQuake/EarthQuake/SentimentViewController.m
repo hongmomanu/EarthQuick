@@ -113,9 +113,6 @@
             cell.levelstr = [[catalogDic objectForKey:@"Degreestr"] description];
             cell.otime=[[catalogDic objectForKey:@"Publishtime"] description];
             
-            
-            
-            
             return cell;
         }
     

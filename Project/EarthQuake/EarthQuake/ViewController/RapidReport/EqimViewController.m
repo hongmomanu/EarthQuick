@@ -199,15 +199,13 @@
     
     self.type = type;
     self.days = days;
-    //NSLog(@"OK :%@", "222");
+    
     [self.esriView addEqimLayer:eqimData select:nil];
     [self dismissViewControllerAnimated:YES completion:NULL];
 
 }
 
 -(void)eqimListViewControllerSelect:(EqimListViewController *)controller eqimData:(NSDictionary *) eqimData eqimType:(NSString *)type eqimDays:(NSString *)days selectCell:(NSDictionary *)select{
-    
-    //NSLog(@"OK :%@", "111");
     self.type = type;
     self.days = days;
     [self.esriView addEqimLayer:eqimData select:select];
