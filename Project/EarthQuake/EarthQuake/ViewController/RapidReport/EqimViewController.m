@@ -46,6 +46,7 @@
         [self.eqimSoap getCataLogEx:self.type Day:self.days];
         
         [self.conView addSubview:self.esriView];
+        [self.conView addSubview:self.segmentedView];
         
         self.tabBar.selectedItem = self.eqimBarItem;
         self.tabBar.delegate = self;
@@ -224,4 +225,31 @@
 }
 
 
+- (IBAction)basemapChanged:(UISegmentedControl *)sender {
+    
+    int basemapURL = 0 ;
+    UISegmentedControl* segControl = (UISegmentedControl*)sender;
+    switch (segControl.selectedSegmentIndex) {
+        case 0: //gray
+            basemapURL = TIANDITU_VECTOR_2000;
+            break;
+        case 1: //oceans
+            basemapURL = TIANDITU_IMAGE_2000;
+            break;
+                default:TIANDITU_VECTOR_2000;
+            break;
+    }
+    
+    AGSMapView *cusmapView =[self.esriView mapView];
+     NSError* err;
+    TianDiTuWMTSLayer* TianDiTuLyr = [[TianDiTuWMTSLayer alloc]initWithLayerType:basemapURL LocalServiceURL:nil error:&err];
+    
+    [cusmapView removeMapLayerWithName:@"TianDiTu Layer"];
+    
+    [cusmapView insertMapLayer:TianDiTuLyr withName:@"TianDiTu Layer" atIndex:0];
+    
+    
+
+    
+}
 @end

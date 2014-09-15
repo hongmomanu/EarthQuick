@@ -108,9 +108,13 @@
             NSDictionary *catalogDic = [(NSArray *)self.sentimentData objectAtIndex:indexPath.row];
             
             cell.title = [[catalogDic objectForKey:@"Title"] description];
+            cell.evaluatestr=[[catalogDic objectForKey:@"Evaluatestr"] description];
             cell.levelchar = [[catalogDic objectForKey:@"Degreestrchn"] description];
             cell.levelstr = [[catalogDic objectForKey:@"Degreestr"] description];
             cell.otime=[[catalogDic objectForKey:@"Publishtime"] description];
+            
+            
+            
             
             return cell;
         }

@@ -21,7 +21,9 @@
 @property (strong,nonatomic)  esriView *esriView;
 
 @property (weak, nonatomic) IBOutlet UIView *conView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedView;
 - (IBAction)addFeelCol:(id)sender;
 - (IBAction)returnToHome:(id)sender;
+- (IBAction)basemapChanged:(UISegmentedControl *)sender;
 
 @end

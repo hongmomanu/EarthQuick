@@ -23,7 +23,6 @@
     NSMutableArray *vars = [[NSMutableArray alloc]initWithObjects:p_pi,
                             p_pPageNo,nil];
     
-    NSLog(@"vars %@",vars);
     
     
     [_soap callSoapServiceWithParameters__functionName:@"GetPublicSentimentList"

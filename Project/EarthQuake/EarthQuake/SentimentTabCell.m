@@ -13,6 +13,7 @@
 @synthesize levelstr;
 @synthesize levelchar;
 @synthesize otime;
+@synthesize evaluatestr;
 
 
 - (void)awakeFromNib
@@ -35,10 +36,27 @@
     }
     return self;
 }
+-(void) setEvaluatestr:(NSString *)p_evaluatestr{
+    
+    if (![p_evaluatestr isEqualToString:evaluatestr]) {
+        evaluatestr = [p_evaluatestr copy];
+        
+    }
+
+}
 - (void)setLevelchar:(NSString *)p_levelchar {
+    
     if (![p_levelchar isEqualToString:levelchar]) {
         levelchar = [p_levelchar copy];
+        
         self.levelcharLabel.text = levelchar;
+        if([evaluatestr isEqualToString:@"1"]){
+            [self.levelcharLabel setTextColor:[UIColor greenColor]];
+        }else{
+            [self.levelcharLabel setTextColor:[UIColor redColor]];
+        }
+       
+        
     }
 }
 

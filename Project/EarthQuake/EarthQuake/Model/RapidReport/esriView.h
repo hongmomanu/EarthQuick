@@ -59,5 +59,6 @@ CLLocationManagerDelegate>
 -(void)addCustLayer:(NSDictionary *)p_data select:(NSDictionary *)selectDic;
 -(void)addEqimLayer:(NSDictionary *)p_data select:(NSDictionary *)selectDic;
 -(void)addSketchLayer;
+
 -(void)addSubjectLayer:(AGSFeatureSet *)p_features select:(AGSGraphic *)p_selGp queryParams:(QueryParams *) p_queryParams;
 @end

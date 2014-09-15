@@ -13,6 +13,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *levelstr;
 @property (copy, nonatomic) NSString *otime;
+@property (copy, nonatomic) NSString *evaluatestr;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *levelcharLabel;

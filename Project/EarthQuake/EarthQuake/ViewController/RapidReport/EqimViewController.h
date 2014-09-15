@@ -45,6 +45,12 @@
 @property (weak ,nonatomic) SubjectViewController *subjectViewController;
 @property (strong,nonatomic)  esriView *esriView;
 @property (weak, nonatomic) IBOutlet UIView *conView;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedView;
+
+
+- (IBAction)basemapChanged:(UISegmentedControl *)sender;
+
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *eqimBarItem;
 

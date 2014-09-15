@@ -32,5 +32,9 @@
 @property (weak, nonatomic) IBOutlet UIView *conView;
 @property (weak, nonatomic) IBOutlet UITabBarItem *tabItemBar;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedView;
+
 - (IBAction)returnToHome:(id)sender;
+- (IBAction)basemapChanged:(UISegmentedControl *)sender;
 @end

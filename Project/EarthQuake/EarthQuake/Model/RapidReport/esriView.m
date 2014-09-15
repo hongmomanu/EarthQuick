@@ -48,6 +48,7 @@
             
             TianDiTuWMTSLayer* TianDiTuLyr = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_2000 LocalServiceURL:nil error:&err];
             TianDiTuWMTSLayer* TianDiTuLyr_Anno = [[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_VECTOR_ANNOTATION_CHINESE_2000 LocalServiceURL:nil error:&err];
+            //TianDiTuWMTSLayer* TianDituLyr_Image=[[TianDiTuWMTSLayer alloc]initWithLayerType:TIANDITU_IMAGE_2000 LocalServiceURL:nil error:&err];
             
             if(TianDiTuLyr!=nil && TianDiTuLyr_Anno !=nil)
             {
@@ -55,6 +56,8 @@
                 [self.mapView removeMapLayerWithName:@"TianDiTu Annotation Layer"];
                 [self.mapView addMapLayer:TianDiTuLyr withName:@"TianDiTu Layer"];
                 [self.mapView addMapLayer:TianDiTuLyr_Anno withName:@"TianDiTu Annotation Layer"];
+                
+                //[self.mapView addMapLayer:TianDituLyr_Image withName:@"TianDiTu Image Layer"];
                 
                 self.mapView.layerDelegate = self;
                 
@@ -154,6 +157,7 @@
     
 }
 
+
 //定制地震
 -(void)addCustLayer:(NSDictionary *)p_data select:(NSDictionary *)selectDic{
     self.mapView.touchDelegate = self;
@@ -203,6 +207,8 @@
     }
 
 }
+
+
 //最新地震
 -(void)addEqimLayer:(NSDictionary *)p_data select:(NSDictionary *)selectDic{
     @autoreleasepool{
@@ -213,32 +219,29 @@
     
     self.dataDic = p_data;
     self.dataType = @"EqimData";
-    NSLog(@"IS NIL TEST %@" ,self.ghLayer);
+    
     [self removeAllLayer];
 
     
-    NSLog(@"IS NIL TEST %@" ,@"1");
     self.ghLayer = [[AGSGraphicsLayer alloc]init];
     self.ghLayer.selectionColor = [UIColor redColor];
         
-    NSLog(@"IS NIL TEST %@" ,@"2");
+    
     [self topLocationLayer];
     [self.mapView addMapLayer:self.ghLayer withName:@"EqimLayer"];
         
-    NSLog(@"IS NIL TEST %@" ,@"3");
     
-    NSLog(@"IS NIL TEST %@" ,@"3.1");
     NSDictionary *t_att;
     NSString *t_imagePath;
     AGSPoint *t_point;
     UIImage *t_m;
-    NSLog(@"IS NIL TEST %@" ,@"3.2");
+    
     AGSPictureMarkerSymbol *picMarkerSymbol;
     AGSGraphic *t_gh;
-    NSLog(@"IS NIL TEST %@" ,@"3.3");
+    
     
     NSArray *t_arr = (NSArray *)self.dataDic;
-    NSLog(@"IS NIL TEST %@" ,@"4");
+    
 
     for (int i=t_arr.count-1; i>=0; i--) {
         @autoreleasepool{
