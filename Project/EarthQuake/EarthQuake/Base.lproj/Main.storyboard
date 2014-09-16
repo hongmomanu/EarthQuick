@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="huE-lt-1iM" customClass="UIScrollView">
-                                <rect key="frame" x="8" y="85" width="305" height="475"/>
+                                <rect key="frame" x="8" y="84.999999839381175" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo.png" id="yHv-bn-uzH">
@@ -359,7 +359,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rcz-WF-NoG">
-                                <rect key="frame" x="7" y="84.999999823596568" width="305" height="475"/>
+                                <rect key="frame" x="7" y="84.999999660457632" width="305" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" id="0jV-ee-IjF">
@@ -545,7 +545,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView contentMode="scaleToFill" id="93K-9c-z9O">
-                                <rect key="frame" x="8" y="84.999999839381175" width="304" height="475"/>
+                                <rect key="frame" x="8" y="84.999999676467866" width="304" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OSf-zU-oLS">
@@ -709,12 +709,13 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="z1c-KG-gnZ">
-                                        <rect key="frame" x="205" y="11" width="81" height="29"/>
+                                        <rect key="frame" x="227" y="13" width="81" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="矢量"/>
                                             <segment title="影像"/>
                                         </segments>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="basemapChanged:" destination="YA0-KI-yhq" eventType="valueChanged" id="sKo-zC-rHy"/>
                                         </connections>
@@ -1458,12 +1459,13 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ifV-KQ-HZz">
-                                        <rect key="frame" x="207" y="13" width="81" height="29"/>
+                                        <rect key="frame" x="227" y="13" width="81" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="矢量"/>
                                             <segment title="影像"/>
                                         </segments>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="basemapChanged:" destination="CXX-8w-fnP" eventType="valueChanged" id="3p4-Rk-Yck"/>
                                         </connections>
@@ -2325,12 +2327,13 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="fG8-OG-Rwo">
-                                        <rect key="frame" x="209" y="20" width="81" height="29"/>
+                                        <rect key="frame" x="227" y="13" width="81" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="矢量"/>
                                             <segment title="影像"/>
                                         </segments>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="basemapChanged:" destination="Rab-yD-5i8" eventType="valueChanged" id="dn3-6W-eX3"/>
                                         </connections>
