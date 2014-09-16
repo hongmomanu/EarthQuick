@@ -125,7 +125,9 @@
         
     }else if(item.tag == 2){
         if ([self.configData getUserRole:PROCUSTOM]) {
-        [self performSegueWithIdentifier:@"mapTosubject" sender:nil];
+        
+            [self performSegueWithIdentifier:@"mapTosubject" sender:nil];
+            
         }else{
             ALERT(@"没有相关的权限");
         }
